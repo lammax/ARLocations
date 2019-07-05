@@ -13,44 +13,35 @@
 import UIKit
 
 protocol StartSceneDisplayLogic: class {
-    func displaySomething(viewModel: StartScene.Something.ViewModel)
+    func displayStart(viewModel: StartScene.Start.ViewModel)
 }
 
 class StartSceneViewController: UIViewController {
     var interactor: StartSceneBusinessLogic?
     var router: (NSObjectProtocol & StartSceneRoutingLogic & StartSceneDataPassing)?
 
+    @IBOutlet weak var startButton: UIButton!
+    
     // MARK: Object lifecycle
-
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
-
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+    }
+    
+    deinit {
+        //do deinit actions
     }
 
     // MARK: Setup
   
     private func setup() {
-        
         StartSceneConfigurator.sharedInstance.configure(viewController: self)
-        
     }
   
-    // MARK: Routing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-
     // MARK: View lifecycle
 
     override func viewDidLoad() {
@@ -58,21 +49,22 @@ class StartSceneViewController: UIViewController {
         doOnDidLoad()
     }
 
-    // MARK: Do something
-
-    //@IBOutlet weak var nameTextField: UITextField!
-
+    // MARK: IBActions
+    @IBAction func startButtonClicked(_ sender: UIButton) {
+        let request = StartScene.Start.Request()
+        interactor?.start(request: request)
+    }
+    
+    // MARK: Do other stuff
     func doOnDidLoad() {
-        let request = StartScene.Something.Request()
-        interactor?.doSomething(request: request)
     }
   
  }
 
 extension StartSceneViewController: StartSceneDisplayLogic {
     
-    func displaySomething(viewModel: StartScene.Something.ViewModel) {
-        
+    func displayStart(viewModel: StartScene.Start.ViewModel) {
+        self.router?.routeToARScene()
     }
 
 }

@@ -13,7 +13,7 @@
 import UIKit
 
 @objc protocol StartSceneRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToARScene()
 }
 
 protocol StartSceneDataPassing {
@@ -26,32 +26,23 @@ class StartSceneRouter: NSObject, StartSceneRoutingLogic, StartSceneDataPassing 
 
     // MARK: Routing
 
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
-    //{
-    //  if let segue = segue {
-    //    let destinationVC = segue.destination as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
+    func routeToARScene() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "ARSceneViewController") as! ARSceneViewController
+        var destinationDS = destinationVC.router!.dataStore!
+        passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+        navigateToSomewhere(source: viewController!, destination: destinationVC)
+    }
 
-    // MARK: Navigation
+//     MARK: Navigation
 
-    //func navigateToSomewhere(source: StartSceneViewController, destination: SomewhereViewController)
-    //{
-    //  source.show(destination, sender: nil)
-    //}
+    func navigateToSomewhere(source: StartSceneViewController, destination: ARSceneViewController) {
+      self.viewController?.navigationController?.pushViewController(destination, animated: true)
+    }
 
-    // MARK: Passing data
+//     MARK: Passing data
 
-    //func passDataToSomewhere(source: StartSceneDataStore, destination: inout SomewhereDataStore)
-    //{
-    //  destination.name = source.name
-    //}
+    func passDataToSomewhere(source: StartSceneDataStore, destination: inout ARSceneDataStore) {
+      //destination.name = source.name
+    }
 }

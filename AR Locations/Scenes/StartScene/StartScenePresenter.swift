@@ -13,7 +13,7 @@
 import UIKit
 
 protocol StartScenePresentationLogic {
-    func presentSomething(response: StartScene.Something.Response)
+    func presentStart(response: StartScene.Start.Response)
 }
 
 class StartScenePresenter: StartScenePresentationLogic {
@@ -21,9 +21,9 @@ class StartScenePresenter: StartScenePresentationLogic {
 
     // MARK: Do something
 
-    func presentSomething(response: StartScene.Something.Response) {
-        let viewModel = StartScene.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentStart(response: StartScene.Start.Response) {
+        let viewModel = StartScene.Start.ViewModel()
+        viewController?.displayStart(viewModel: viewModel)
     }
     
 }

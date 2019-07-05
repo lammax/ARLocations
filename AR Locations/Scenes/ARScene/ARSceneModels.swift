@@ -1,5 +1,5 @@
 //
-//  StartSceneModels.swift
+//  ARSceneModels.swift
 //  AR Locations
 //
 //  Created by Mac on 05.07.2019.
@@ -12,11 +12,11 @@
 
 import UIKit
 
-enum StartScene {
+enum ARScene {
     
   // MARK: Use cases
   
-    enum Start {
+    enum Something {
         struct Request {
         }
         struct Response {

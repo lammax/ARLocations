@@ -13,7 +13,7 @@
 import UIKit
 
 protocol StartSceneBusinessLogic {
-    func doSomeLogic(request: StartScene.Something.Request)
+    func start(request: StartScene.Start.Request)
 }
 
 protocol StartSceneDataStore {
@@ -30,21 +30,18 @@ class StartSceneInteractor: StartSceneDataStore {
 
     // MARK: Do stuff
     
-    private func doSomething() {
-        let request = StartScene.Something.Request()
-        self.doSomeLogic(request: request)
+    private func doStart() {
+        let request = StartScene.Start.Request()
+        self.start(request: request)
     }
 
 }
 
 extension StartSceneInteractor: StartSceneBusinessLogic {
     
-    func doSomeLogic(request: StartScene.Something.Request) {
-        worker = StartSceneWorker()
-        worker?.doSomeWork()
-        
-        let response = StartScene.Something.Response()
-        presenter?.presentSomething(response: response)
+    func start(request: StartScene.Start.Request) {
+        let response = StartScene.Start.Response()
+        presenter?.presentStart(response: response)
     }
 
 }

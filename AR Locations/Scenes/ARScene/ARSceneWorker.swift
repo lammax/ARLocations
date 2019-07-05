@@ -1,5 +1,5 @@
 //
-//  StartSceneModels.swift
+//  ARSceneWorker.swift
 //  AR Locations
 //
 //  Created by Mac on 05.07.2019.
@@ -12,17 +12,10 @@
 
 import UIKit
 
-enum StartScene {
-    
-  // MARK: Use cases
+class ARSceneWorker {
   
-    enum Start {
-        struct Request {
-        }
-        struct Response {
-        }
-        struct ViewModel {
-        }
+    func doSomeWork() {
+    
     }
     
 }

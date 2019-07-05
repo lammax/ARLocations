@@ -87,6 +87,13 @@
 		041AFEC122CF8F2700BDDBB6 /* StartSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB522CF8F2700BDDBB6 /* StartSceneInteractor.swift */; };
 		041AFEC222CF8F2700BDDBB6 /* StartSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB522CF8F2700BDDBB6 /* StartSceneInteractor.swift */; };
 		041AFEC322CF8F2700BDDBB6 /* StartSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB622CF8F2700BDDBB6 /* StartSceneConfigurator.swift */; };
+		041AFECC22CF92CF00BDDBB6 /* ARScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEC522CF92CF00BDDBB6 /* ARScenePresenter.swift */; };
+		041AFECD22CF92CF00BDDBB6 /* ARSceneWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEC622CF92CF00BDDBB6 /* ARSceneWorker.swift */; };
+		041AFECE22CF92CF00BDDBB6 /* ARSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEC722CF92CF00BDDBB6 /* ARSceneRouter.swift */; };
+		041AFECF22CF92CF00BDDBB6 /* ARSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEC822CF92CF00BDDBB6 /* ARSceneModels.swift */; };
+		041AFED022CF92CF00BDDBB6 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEC922CF92CF00BDDBB6 /* ARSceneViewController.swift */; };
+		041AFED122CF92CF00BDDBB6 /* ARSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFECA22CF92CF00BDDBB6 /* ARSceneInteractor.swift */; };
+		041AFED222CF92CF00BDDBB6 /* ARSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFECB22CF92CF00BDDBB6 /* ARSceneConfigurator.swift */; };
 		3986E7E1AFD6AD8342DFF3E3 /* Pods_AR_LocationsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CBBF78AC27CDC18CD7826A9 /* Pods_AR_LocationsTests.framework */; };
 		ADE794924EE5648BD13A980D /* Pods_AR_Locations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146332E555F040693775BFFD /* Pods_AR_Locations.framework */; };
 /* End PBXBuildFile section */
@@ -150,6 +157,13 @@
 		041AFEB422CF8F2700BDDBB6 /* StartSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSceneViewController.swift; sourceTree = "<group>"; };
 		041AFEB522CF8F2700BDDBB6 /* StartSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSceneInteractor.swift; sourceTree = "<group>"; };
 		041AFEB622CF8F2700BDDBB6 /* StartSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSceneConfigurator.swift; sourceTree = "<group>"; };
+		041AFEC522CF92CF00BDDBB6 /* ARScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScenePresenter.swift; sourceTree = "<group>"; };
+		041AFEC622CF92CF00BDDBB6 /* ARSceneWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneWorker.swift; sourceTree = "<group>"; };
+		041AFEC722CF92CF00BDDBB6 /* ARSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneRouter.swift; sourceTree = "<group>"; };
+		041AFEC822CF92CF00BDDBB6 /* ARSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneModels.swift; sourceTree = "<group>"; };
+		041AFEC922CF92CF00BDDBB6 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
+		041AFECA22CF92CF00BDDBB6 /* ARSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneInteractor.swift; sourceTree = "<group>"; };
+		041AFECB22CF92CF00BDDBB6 /* ARSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneConfigurator.swift; sourceTree = "<group>"; };
 		146332E555F040693775BFFD /* Pods_AR_Locations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Locations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBBF78AC27CDC18CD7826A9 /* Pods_AR_LocationsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_LocationsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC3B2BC97E22EF388435828 /* Pods-AR Locations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR Locations.debug.xcconfig"; path = "Target Support Files/Pods-AR Locations/Pods-AR Locations.debug.xcconfig"; sourceTree = "<group>"; };
@@ -335,6 +349,13 @@
 			isa = PBXGroup;
 			children = (
 				041AFE2722CF70EE00BDDBB6 /* ViewController.swift */,
+				041AFEC522CF92CF00BDDBB6 /* ARScenePresenter.swift */,
+				041AFEC622CF92CF00BDDBB6 /* ARSceneWorker.swift */,
+				041AFEC722CF92CF00BDDBB6 /* ARSceneRouter.swift */,
+				041AFEC822CF92CF00BDDBB6 /* ARSceneModels.swift */,
+				041AFEC922CF92CF00BDDBB6 /* ARSceneViewController.swift */,
+				041AFECA22CF92CF00BDDBB6 /* ARSceneInteractor.swift */,
+				041AFECB22CF92CF00BDDBB6 /* ARSceneConfigurator.swift */,
 			);
 			path = ARScene;
 			sourceTree = "<group>";
@@ -563,17 +584,22 @@
 				041AFE8E22CF766900BDDBB6 /* Int+additions.swift in Sources */,
 				041AFE5522CF74D500BDDBB6 /* LoggerManager.swift in Sources */,
 				041AFE9822CF766900BDDBB6 /* URL+ads.swift in Sources */,
+				041AFECD22CF92CF00BDDBB6 /* ARSceneWorker.swift in Sources */,
+				041AFECC22CF92CF00BDDBB6 /* ARScenePresenter.swift in Sources */,
 				041AFEBB22CF8F2700BDDBB6 /* StartSceneRouter.swift in Sources */,
 				041AFE5622CF74D500BDDBB6 /* CustomPhotoAlbum.swift in Sources */,
 				041AFE5322CF74D500BDDBB6 /* ArCameraManager.swift in Sources */,
 				041AFE7C22CF766900BDDBB6 /* UIButton+adds.swift in Sources */,
 				041AFEAC22CF794100BDDBB6 /* AlertMessage.swift in Sources */,
 				041AFE8222CF766900BDDBB6 /* UserDefaults+adds.swift in Sources */,
+				041AFED022CF92CF00BDDBB6 /* ARSceneViewController.swift in Sources */,
 				041AFE4F22CF74D500BDDBB6 /* YaExifManager.swift in Sources */,
 				041AFE9022CF766900BDDBB6 /* simd+adds.swift in Sources */,
 				041AFE2822CF70EE00BDDBB6 /* ViewController.swift in Sources */,
+				041AFECF22CF92CF00BDDBB6 /* ARSceneModels.swift in Sources */,
 				041AFEA422CF766900BDDBB6 /* UIAlertController+adds.swift in Sources */,
 				041AFEA622CF766900BDDBB6 /* PHAsset+adds.swift in Sources */,
+				041AFED122CF92CF00BDDBB6 /* ARSceneInteractor.swift in Sources */,
 				041AFE8422CF766900BDDBB6 /* UIColor+additions.swift in Sources */,
 				041AFEA022CF766900BDDBB6 /* UIDevice+adds.swift in Sources */,
 				041AFE7E22CF766900BDDBB6 /* UITextView+additions.swift in Sources */,
@@ -585,8 +611,10 @@
 				041AFEA222CF766900BDDBB6 /* CGPoint+adds.swift in Sources */,
 				041AFEC322CF8F2700BDDBB6 /* StartSceneConfigurator.swift in Sources */,
 				041AFE8A22CF766900BDDBB6 /* Data+adds.swift in Sources */,
+				041AFECE22CF92CF00BDDBB6 /* ARSceneRouter.swift in Sources */,
 				041AFEB922CF8F2700BDDBB6 /* StartSceneWorker.swift in Sources */,
 				041AFE9A22CF766900BDDBB6 /* SCNNode+additions.swift in Sources */,
+				041AFED222CF92CF00BDDBB6 /* ARSceneConfigurator.swift in Sources */,
 				041AFEB722CF8F2700BDDBB6 /* StartScenePresenter.swift in Sources */,
 				041AFE9622CF766900BDDBB6 /* UIImage+additions.swift in Sources */,
 				041AFE9C22CF766900BDDBB6 /* UIView+adds.swift in Sources */,
