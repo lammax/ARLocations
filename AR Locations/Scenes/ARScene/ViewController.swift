@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
     
@@ -22,22 +22,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
+
         
         // Create a new scene
         let scene = SCNScene(named: "art.scnassets/ship.scn")!
         
         // Set the scene to the view
         sceneView.scene = scene
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        sceneView.autoenablesDefaultLighting = true
+        sceneView.session.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
-
         // Run the view's session
-        sceneView.session.run(configuration)
+        sceneView.session.run(.makeBaseConfiguration(), options: [.removeExistingAnchors, .resetTracking])
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -47,16 +48,33 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
 
+}
+
+private extension ARConfiguration {
+    static func makeBaseConfiguration() -> ARWorldTrackingConfiguration {
+        let configuration = ARWorldTrackingConfiguration()
+        
+        configuration.isAutoFocusEnabled = true
+        configuration.worldAlignment = .gravityAndHeading
+        configuration.maximumNumberOfTrackedImages = 4
+        //configuration.planeDetection = [ .horizontal, .vertical ]
+        
+        return configuration
+    }
+}
+
+extension ViewController: ARSCNViewDelegate {
+    
     // MARK: - ARSCNViewDelegate
     
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
+    /*
+     // Override to create and configure nodes for anchors added to the view's session.
+     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+     let node = SCNNode()
      
-        return node
-    }
-*/
+     return node
+     }
+     */
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
@@ -72,4 +90,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+    
+}
+
+extension ViewController: ARSessionDelegate {
+    
+    func session(_ session: ARSession, didUpdate frame: ARFrame) {
+       // self.delegate?.arCameraManager(didFrameUpdate: frame, for: session)
+    }
+    
 }

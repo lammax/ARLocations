@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,81 @@
 		041AFE2D22CF70F100BDDBB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041AFE2C22CF70F100BDDBB6 /* Assets.xcassets */; };
 		041AFE3022CF70F100BDDBB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041AFE2E22CF70F100BDDBB6 /* LaunchScreen.storyboard */; };
 		041AFE3B22CF70F100BDDBB6 /* AR_LocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE3A22CF70F100BDDBB6 /* AR_LocationsTests.swift */; };
+		041AFE4F22CF74D500BDDBB6 /* YaExifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4722CF74D500BDDBB6 /* YaExifManager.swift */; };
+		041AFE5022CF74D500BDDBB6 /* YaMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4822CF74D500BDDBB6 /* YaMotionManager.swift */; };
+		041AFE5322CF74D500BDDBB6 /* ArCameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4B22CF74D500BDDBB6 /* ArCameraManager.swift */; };
+		041AFE5422CF74D500BDDBB6 /* YaLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4C22CF74D500BDDBB6 /* YaLocationManager.swift */; };
+		041AFE5522CF74D500BDDBB6 /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4D22CF74D500BDDBB6 /* LoggerManager.swift */; };
+		041AFE5622CF74D500BDDBB6 /* CustomPhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4E22CF74D500BDDBB6 /* CustomPhotoAlbum.swift */; };
+		041AFE5722CF74DE00BDDBB6 /* ArCameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4B22CF74D500BDDBB6 /* ArCameraManager.swift */; };
+		041AFE5922CF74DE00BDDBB6 /* CustomPhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4E22CF74D500BDDBB6 /* CustomPhotoAlbum.swift */; };
+		041AFE5A22CF74DE00BDDBB6 /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4D22CF74D500BDDBB6 /* LoggerManager.swift */; };
+		041AFE5C22CF74DE00BDDBB6 /* YaExifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4722CF74D500BDDBB6 /* YaExifManager.swift */; };
+		041AFE5D22CF74DE00BDDBB6 /* YaLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4C22CF74D500BDDBB6 /* YaLocationManager.swift */; };
+		041AFE5E22CF74DE00BDDBB6 /* YaMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4822CF74D500BDDBB6 /* YaMotionManager.swift */; };
+		041AFE7A22CF766900BDDBB6 /* UIImageView+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6322CF766800BDDBB6 /* UIImageView+adds.swift */; };
+		041AFE7B22CF766900BDDBB6 /* UIImageView+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6322CF766800BDDBB6 /* UIImageView+adds.swift */; };
+		041AFE7C22CF766900BDDBB6 /* UIButton+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6422CF766800BDDBB6 /* UIButton+adds.swift */; };
+		041AFE7D22CF766900BDDBB6 /* UIButton+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6422CF766800BDDBB6 /* UIButton+adds.swift */; };
+		041AFE7E22CF766900BDDBB6 /* UITextView+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6522CF766800BDDBB6 /* UITextView+additions.swift */; };
+		041AFE7F22CF766900BDDBB6 /* UITextView+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6522CF766800BDDBB6 /* UITextView+additions.swift */; };
+		041AFE8022CF766900BDDBB6 /* SCNVector3+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6622CF766800BDDBB6 /* SCNVector3+adds.swift */; };
+		041AFE8122CF766900BDDBB6 /* SCNVector3+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6622CF766800BDDBB6 /* SCNVector3+adds.swift */; };
+		041AFE8222CF766900BDDBB6 /* UserDefaults+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6722CF766800BDDBB6 /* UserDefaults+adds.swift */; };
+		041AFE8322CF766900BDDBB6 /* UserDefaults+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6722CF766800BDDBB6 /* UserDefaults+adds.swift */; };
+		041AFE8422CF766900BDDBB6 /* UIColor+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6822CF766800BDDBB6 /* UIColor+additions.swift */; };
+		041AFE8522CF766900BDDBB6 /* UIColor+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6822CF766800BDDBB6 /* UIColor+additions.swift */; };
+		041AFE8622CF766900BDDBB6 /* ARSession+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6922CF766800BDDBB6 /* ARSession+additions.swift */; };
+		041AFE8722CF766900BDDBB6 /* ARSession+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6922CF766800BDDBB6 /* ARSession+additions.swift */; };
+		041AFE8822CF766900BDDBB6 /* Date+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6A22CF766800BDDBB6 /* Date+adds.swift */; };
+		041AFE8922CF766900BDDBB6 /* Date+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6A22CF766800BDDBB6 /* Date+adds.swift */; };
+		041AFE8A22CF766900BDDBB6 /* Data+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6B22CF766800BDDBB6 /* Data+adds.swift */; };
+		041AFE8B22CF766900BDDBB6 /* Data+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6B22CF766800BDDBB6 /* Data+adds.swift */; };
+		041AFE8C22CF766900BDDBB6 /* Optional+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6C22CF766800BDDBB6 /* Optional+adds.swift */; };
+		041AFE8D22CF766900BDDBB6 /* Optional+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6C22CF766800BDDBB6 /* Optional+adds.swift */; };
+		041AFE8E22CF766900BDDBB6 /* Int+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6D22CF766800BDDBB6 /* Int+additions.swift */; };
+		041AFE8F22CF766900BDDBB6 /* Int+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6D22CF766800BDDBB6 /* Int+additions.swift */; };
+		041AFE9022CF766900BDDBB6 /* simd+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6E22CF766800BDDBB6 /* simd+adds.swift */; };
+		041AFE9122CF766900BDDBB6 /* simd+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6E22CF766800BDDBB6 /* simd+adds.swift */; };
+		041AFE9222CF766900BDDBB6 /* String+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6F22CF766800BDDBB6 /* String+additions.swift */; };
+		041AFE9322CF766900BDDBB6 /* String+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6F22CF766800BDDBB6 /* String+additions.swift */; };
+		041AFE9422CF766900BDDBB6 /* CLLocation+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7022CF766800BDDBB6 /* CLLocation+adds.swift */; };
+		041AFE9522CF766900BDDBB6 /* CLLocation+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7022CF766800BDDBB6 /* CLLocation+adds.swift */; };
+		041AFE9622CF766900BDDBB6 /* UIImage+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7122CF766800BDDBB6 /* UIImage+additions.swift */; };
+		041AFE9722CF766900BDDBB6 /* UIImage+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7122CF766800BDDBB6 /* UIImage+additions.swift */; };
+		041AFE9822CF766900BDDBB6 /* URL+ads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7222CF766800BDDBB6 /* URL+ads.swift */; };
+		041AFE9922CF766900BDDBB6 /* URL+ads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7222CF766800BDDBB6 /* URL+ads.swift */; };
+		041AFE9A22CF766900BDDBB6 /* SCNNode+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7322CF766800BDDBB6 /* SCNNode+additions.swift */; };
+		041AFE9B22CF766900BDDBB6 /* SCNNode+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7322CF766800BDDBB6 /* SCNNode+additions.swift */; };
+		041AFE9C22CF766900BDDBB6 /* UIView+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7422CF766800BDDBB6 /* UIView+adds.swift */; };
+		041AFE9D22CF766900BDDBB6 /* UIView+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7422CF766800BDDBB6 /* UIView+adds.swift */; };
+		041AFE9E22CF766900BDDBB6 /* UIViewController+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7522CF766800BDDBB6 /* UIViewController+additions.swift */; };
+		041AFE9F22CF766900BDDBB6 /* UIViewController+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7522CF766800BDDBB6 /* UIViewController+additions.swift */; };
+		041AFEA022CF766900BDDBB6 /* UIDevice+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7622CF766800BDDBB6 /* UIDevice+adds.swift */; };
+		041AFEA122CF766900BDDBB6 /* UIDevice+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7622CF766800BDDBB6 /* UIDevice+adds.swift */; };
+		041AFEA222CF766900BDDBB6 /* CGPoint+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7722CF766800BDDBB6 /* CGPoint+adds.swift */; };
+		041AFEA322CF766900BDDBB6 /* CGPoint+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7722CF766800BDDBB6 /* CGPoint+adds.swift */; };
+		041AFEA422CF766900BDDBB6 /* UIAlertController+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7822CF766800BDDBB6 /* UIAlertController+adds.swift */; };
+		041AFEA522CF766900BDDBB6 /* UIAlertController+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7822CF766800BDDBB6 /* UIAlertController+adds.swift */; };
+		041AFEA622CF766900BDDBB6 /* PHAsset+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7922CF766900BDDBB6 /* PHAsset+adds.swift */; };
+		041AFEA722CF766900BDDBB6 /* PHAsset+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE7922CF766900BDDBB6 /* PHAsset+adds.swift */; };
+		041AFEAC22CF794100BDDBB6 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEAB22CF794100BDDBB6 /* AlertMessage.swift */; };
+		041AFEAD22CF794100BDDBB6 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEAB22CF794100BDDBB6 /* AlertMessage.swift */; };
+		041AFEB722CF8F2700BDDBB6 /* StartScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB022CF8F2700BDDBB6 /* StartScenePresenter.swift */; };
+		041AFEB822CF8F2700BDDBB6 /* StartScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB022CF8F2700BDDBB6 /* StartScenePresenter.swift */; };
+		041AFEB922CF8F2700BDDBB6 /* StartSceneWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB122CF8F2700BDDBB6 /* StartSceneWorker.swift */; };
+		041AFEBA22CF8F2700BDDBB6 /* StartSceneWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB122CF8F2700BDDBB6 /* StartSceneWorker.swift */; };
+		041AFEBB22CF8F2700BDDBB6 /* StartSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB222CF8F2700BDDBB6 /* StartSceneRouter.swift */; };
+		041AFEBC22CF8F2700BDDBB6 /* StartSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB222CF8F2700BDDBB6 /* StartSceneRouter.swift */; };
+		041AFEBD22CF8F2700BDDBB6 /* StartSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB322CF8F2700BDDBB6 /* StartSceneModels.swift */; };
+		041AFEBE22CF8F2700BDDBB6 /* StartSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB322CF8F2700BDDBB6 /* StartSceneModels.swift */; };
+		041AFEBF22CF8F2700BDDBB6 /* StartSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB422CF8F2700BDDBB6 /* StartSceneViewController.swift */; };
+		041AFEC022CF8F2700BDDBB6 /* StartSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB422CF8F2700BDDBB6 /* StartSceneViewController.swift */; };
+		041AFEC122CF8F2700BDDBB6 /* StartSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB522CF8F2700BDDBB6 /* StartSceneInteractor.swift */; };
+		041AFEC222CF8F2700BDDBB6 /* StartSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB522CF8F2700BDDBB6 /* StartSceneInteractor.swift */; };
+		041AFEC322CF8F2700BDDBB6 /* StartSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEB622CF8F2700BDDBB6 /* StartSceneConfigurator.swift */; };
+		3986E7E1AFD6AD8342DFF3E3 /* Pods_AR_LocationsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CBBF78AC27CDC18CD7826A9 /* Pods_AR_LocationsTests.framework */; };
+		ADE794924EE5648BD13A980D /* Pods_AR_Locations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146332E555F040693775BFFD /* Pods_AR_Locations.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +113,49 @@
 		041AFE3622CF70F100BDDBB6 /* AR LocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AR LocationsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		041AFE3A22CF70F100BDDBB6 /* AR_LocationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_LocationsTests.swift; sourceTree = "<group>"; };
 		041AFE3C22CF70F100BDDBB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		041AFE4722CF74D500BDDBB6 /* YaExifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YaExifManager.swift; sourceTree = "<group>"; };
+		041AFE4822CF74D500BDDBB6 /* YaMotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YaMotionManager.swift; sourceTree = "<group>"; };
+		041AFE4B22CF74D500BDDBB6 /* ArCameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArCameraManager.swift; sourceTree = "<group>"; };
+		041AFE4C22CF74D500BDDBB6 /* YaLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YaLocationManager.swift; sourceTree = "<group>"; };
+		041AFE4D22CF74D500BDDBB6 /* LoggerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerManager.swift; sourceTree = "<group>"; };
+		041AFE4E22CF74D500BDDBB6 /* CustomPhotoAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPhotoAlbum.swift; sourceTree = "<group>"; };
+		041AFE6322CF766800BDDBB6 /* UIImageView+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+adds.swift"; sourceTree = "<group>"; };
+		041AFE6422CF766800BDDBB6 /* UIButton+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+adds.swift"; sourceTree = "<group>"; };
+		041AFE6522CF766800BDDBB6 /* UITextView+additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+additions.swift"; sourceTree = "<group>"; };
+		041AFE6622CF766800BDDBB6 /* SCNVector3+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3+adds.swift"; sourceTree = "<group>"; };
+		041AFE6722CF766800BDDBB6 /* UserDefaults+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+adds.swift"; sourceTree = "<group>"; };
+		041AFE6822CF766800BDDBB6 /* UIColor+additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+additions.swift"; sourceTree = "<group>"; };
+		041AFE6922CF766800BDDBB6 /* ARSession+additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ARSession+additions.swift"; sourceTree = "<group>"; };
+		041AFE6A22CF766800BDDBB6 /* Date+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+adds.swift"; sourceTree = "<group>"; };
+		041AFE6B22CF766800BDDBB6 /* Data+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+adds.swift"; sourceTree = "<group>"; };
+		041AFE6C22CF766800BDDBB6 /* Optional+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+adds.swift"; sourceTree = "<group>"; };
+		041AFE6D22CF766800BDDBB6 /* Int+additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+additions.swift"; sourceTree = "<group>"; };
+		041AFE6E22CF766800BDDBB6 /* simd+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "simd+adds.swift"; sourceTree = "<group>"; };
+		041AFE6F22CF766800BDDBB6 /* String+additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+additions.swift"; sourceTree = "<group>"; };
+		041AFE7022CF766800BDDBB6 /* CLLocation+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+adds.swift"; sourceTree = "<group>"; };
+		041AFE7122CF766800BDDBB6 /* UIImage+additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+additions.swift"; sourceTree = "<group>"; };
+		041AFE7222CF766800BDDBB6 /* URL+ads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+ads.swift"; sourceTree = "<group>"; };
+		041AFE7322CF766800BDDBB6 /* SCNNode+additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNNode+additions.swift"; sourceTree = "<group>"; };
+		041AFE7422CF766800BDDBB6 /* UIView+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+adds.swift"; sourceTree = "<group>"; };
+		041AFE7522CF766800BDDBB6 /* UIViewController+additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+additions.swift"; sourceTree = "<group>"; };
+		041AFE7622CF766800BDDBB6 /* UIDevice+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+adds.swift"; sourceTree = "<group>"; };
+		041AFE7722CF766800BDDBB6 /* CGPoint+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+adds.swift"; sourceTree = "<group>"; };
+		041AFE7822CF766800BDDBB6 /* UIAlertController+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+adds.swift"; sourceTree = "<group>"; };
+		041AFE7922CF766900BDDBB6 /* PHAsset+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHAsset+adds.swift"; sourceTree = "<group>"; };
+		041AFEAB22CF794100BDDBB6 /* AlertMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		041AFEB022CF8F2700BDDBB6 /* StartScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScenePresenter.swift; sourceTree = "<group>"; };
+		041AFEB122CF8F2700BDDBB6 /* StartSceneWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSceneWorker.swift; sourceTree = "<group>"; };
+		041AFEB222CF8F2700BDDBB6 /* StartSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSceneRouter.swift; sourceTree = "<group>"; };
+		041AFEB322CF8F2700BDDBB6 /* StartSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSceneModels.swift; sourceTree = "<group>"; };
+		041AFEB422CF8F2700BDDBB6 /* StartSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSceneViewController.swift; sourceTree = "<group>"; };
+		041AFEB522CF8F2700BDDBB6 /* StartSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSceneInteractor.swift; sourceTree = "<group>"; };
+		041AFEB622CF8F2700BDDBB6 /* StartSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSceneConfigurator.swift; sourceTree = "<group>"; };
+		146332E555F040693775BFFD /* Pods_AR_Locations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Locations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CBBF78AC27CDC18CD7826A9 /* Pods_AR_LocationsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_LocationsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC3B2BC97E22EF388435828 /* Pods-AR Locations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR Locations.debug.xcconfig"; path = "Target Support Files/Pods-AR Locations/Pods-AR Locations.debug.xcconfig"; sourceTree = "<group>"; };
+		4787F02FE533C874C94F062B /* Pods-AR Locations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR Locations.release.xcconfig"; path = "Target Support Files/Pods-AR Locations/Pods-AR Locations.release.xcconfig"; sourceTree = "<group>"; };
+		8DD5F580A21F4D323FE0B803 /* Pods-AR LocationsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR LocationsTests.debug.xcconfig"; path = "Target Support Files/Pods-AR LocationsTests/Pods-AR LocationsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E09EA35587F41D524C7D0FE2 /* Pods-AR LocationsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR LocationsTests.release.xcconfig"; path = "Target Support Files/Pods-AR LocationsTests/Pods-AR LocationsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADE794924EE5648BD13A980D /* Pods_AR_Locations.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3986E7E1AFD6AD8342DFF3E3 /* Pods_AR_LocationsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,9 +181,12 @@
 		041AFE1722CF70EE00BDDBB6 = {
 			isa = PBXGroup;
 			children = (
+				041AFE4522CF73DE00BDDBB6 /* Common */,
 				041AFE2222CF70EE00BDDBB6 /* AR Locations */,
 				041AFE3922CF70F100BDDBB6 /* AR LocationsTests */,
 				041AFE2122CF70EE00BDDBB6 /* Products */,
+				DDFA2C1553567A18A6DA06B1 /* Pods */,
+				C6C552C0282D089E83B697EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +202,10 @@
 		041AFE2222CF70EE00BDDBB6 /* AR Locations */ = {
 			isa = PBXGroup;
 			children = (
-				041AFE2322CF70EE00BDDBB6 /* AppDelegate.swift */,
-				041AFE2522CF70EE00BDDBB6 /* art.scnassets */,
-				041AFE2722CF70EE00BDDBB6 /* ViewController.swift */,
-				041AFE2922CF70EE00BDDBB6 /* Main.storyboard */,
-				041AFE2C22CF70F100BDDBB6 /* Assets.xcassets */,
-				041AFE2E22CF70F100BDDBB6 /* LaunchScreen.storyboard */,
-				041AFE3122CF70F100BDDBB6 /* Info.plist */,
+				041AFEA922CF76BC00BDDBB6 /* Views */,
+				041AFEA822CF76B600BDDBB6 /* Resources */,
+				041AFE6122CF756500BDDBB6 /* Settings */,
+				041AFE6022CF755D00BDDBB6 /* Scenes */,
 			);
 			path = "AR Locations";
 			sourceTree = "<group>";
@@ -99,6 +219,153 @@
 			path = "AR LocationsTests";
 			sourceTree = "<group>";
 		};
+		041AFE4522CF73DE00BDDBB6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				041AFEAA22CF791B00BDDBB6 /* Model */,
+				041AFE6222CF764500BDDBB6 /* Extensions */,
+				041AFE4622CF73FA00BDDBB6 /* Managers */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		041AFE4622CF73FA00BDDBB6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				041AFE4B22CF74D500BDDBB6 /* ArCameraManager.swift */,
+				041AFE4E22CF74D500BDDBB6 /* CustomPhotoAlbum.swift */,
+				041AFE4D22CF74D500BDDBB6 /* LoggerManager.swift */,
+				041AFE4722CF74D500BDDBB6 /* YaExifManager.swift */,
+				041AFE4C22CF74D500BDDBB6 /* YaLocationManager.swift */,
+				041AFE4822CF74D500BDDBB6 /* YaMotionManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		041AFE5F22CF74E700BDDBB6 /* StartScene */ = {
+			isa = PBXGroup;
+			children = (
+				041AFEB022CF8F2700BDDBB6 /* StartScenePresenter.swift */,
+				041AFEB122CF8F2700BDDBB6 /* StartSceneWorker.swift */,
+				041AFEB222CF8F2700BDDBB6 /* StartSceneRouter.swift */,
+				041AFEB322CF8F2700BDDBB6 /* StartSceneModels.swift */,
+				041AFEB422CF8F2700BDDBB6 /* StartSceneViewController.swift */,
+				041AFEB522CF8F2700BDDBB6 /* StartSceneInteractor.swift */,
+				041AFEB622CF8F2700BDDBB6 /* StartSceneConfigurator.swift */,
+			);
+			path = StartScene;
+			sourceTree = "<group>";
+		};
+		041AFE6022CF755D00BDDBB6 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				041AFEAF22CF8E2700BDDBB6 /* MapScene */,
+				041AFEAE22CF8E1800BDDBB6 /* ARScene */,
+				041AFE5F22CF74E700BDDBB6 /* StartScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		041AFE6122CF756500BDDBB6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				041AFE2322CF70EE00BDDBB6 /* AppDelegate.swift */,
+				041AFE3122CF70F100BDDBB6 /* Info.plist */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		041AFE6222CF764500BDDBB6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				041AFE6922CF766800BDDBB6 /* ARSession+additions.swift */,
+				041AFE7722CF766800BDDBB6 /* CGPoint+adds.swift */,
+				041AFE7022CF766800BDDBB6 /* CLLocation+adds.swift */,
+				041AFE6B22CF766800BDDBB6 /* Data+adds.swift */,
+				041AFE6A22CF766800BDDBB6 /* Date+adds.swift */,
+				041AFE6D22CF766800BDDBB6 /* Int+additions.swift */,
+				041AFE6C22CF766800BDDBB6 /* Optional+adds.swift */,
+				041AFE7922CF766900BDDBB6 /* PHAsset+adds.swift */,
+				041AFE7322CF766800BDDBB6 /* SCNNode+additions.swift */,
+				041AFE6622CF766800BDDBB6 /* SCNVector3+adds.swift */,
+				041AFE6E22CF766800BDDBB6 /* simd+adds.swift */,
+				041AFE6F22CF766800BDDBB6 /* String+additions.swift */,
+				041AFE7822CF766800BDDBB6 /* UIAlertController+adds.swift */,
+				041AFE6422CF766800BDDBB6 /* UIButton+adds.swift */,
+				041AFE6822CF766800BDDBB6 /* UIColor+additions.swift */,
+				041AFE7622CF766800BDDBB6 /* UIDevice+adds.swift */,
+				041AFE7122CF766800BDDBB6 /* UIImage+additions.swift */,
+				041AFE6322CF766800BDDBB6 /* UIImageView+adds.swift */,
+				041AFE6522CF766800BDDBB6 /* UITextView+additions.swift */,
+				041AFE7422CF766800BDDBB6 /* UIView+adds.swift */,
+				041AFE7522CF766800BDDBB6 /* UIViewController+additions.swift */,
+				041AFE7222CF766800BDDBB6 /* URL+ads.swift */,
+				041AFE6722CF766800BDDBB6 /* UserDefaults+adds.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		041AFEA822CF76B600BDDBB6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				041AFE2522CF70EE00BDDBB6 /* art.scnassets */,
+				041AFE2C22CF70F100BDDBB6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		041AFEA922CF76BC00BDDBB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				041AFE2922CF70EE00BDDBB6 /* Main.storyboard */,
+				041AFE2E22CF70F100BDDBB6 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		041AFEAA22CF791B00BDDBB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				041AFEAB22CF794100BDDBB6 /* AlertMessage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		041AFEAE22CF8E1800BDDBB6 /* ARScene */ = {
+			isa = PBXGroup;
+			children = (
+				041AFE2722CF70EE00BDDBB6 /* ViewController.swift */,
+			);
+			path = ARScene;
+			sourceTree = "<group>";
+		};
+		041AFEAF22CF8E2700BDDBB6 /* MapScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MapScene;
+			sourceTree = "<group>";
+		};
+		C6C552C0282D089E83B697EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				146332E555F040693775BFFD /* Pods_AR_Locations.framework */,
+				2CBBF78AC27CDC18CD7826A9 /* Pods_AR_LocationsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDFA2C1553567A18A6DA06B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BC3B2BC97E22EF388435828 /* Pods-AR Locations.debug.xcconfig */,
+				4787F02FE533C874C94F062B /* Pods-AR Locations.release.xcconfig */,
+				8DD5F580A21F4D323FE0B803 /* Pods-AR LocationsTests.debug.xcconfig */,
+				E09EA35587F41D524C7D0FE2 /* Pods-AR LocationsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +373,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 041AFE3F22CF70F200BDDBB6 /* Build configuration list for PBXNativeTarget "AR Locations" */;
 			buildPhases = (
+				1620A21C4F4EE1EF14FA4A01 /* [CP] Check Pods Manifest.lock */,
 				041AFE1C22CF70EE00BDDBB6 /* Sources */,
 				041AFE1D22CF70EE00BDDBB6 /* Frameworks */,
 				041AFE1E22CF70EE00BDDBB6 /* Resources */,
+				7555F36227F6C71AAEDC50CC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,9 +392,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 041AFE4222CF70F200BDDBB6 /* Build configuration list for PBXNativeTarget "AR LocationsTests" */;
 			buildPhases = (
+				539AF614943574BA0C1DD8C4 /* [CP] Check Pods Manifest.lock */,
 				041AFE3222CF70F100BDDBB6 /* Sources */,
 				041AFE3322CF70F100BDDBB6 /* Frameworks */,
 				041AFE3422CF70F100BDDBB6 /* Resources */,
+				78472692A4B80B4567CF494D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,13 +467,131 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1620A21C4F4EE1EF14FA4A01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AR Locations-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		539AF614943574BA0C1DD8C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AR LocationsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7555F36227F6C71AAEDC50CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AR Locations/Pods-AR Locations-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AR Locations/Pods-AR Locations-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AR Locations/Pods-AR Locations-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78472692A4B80B4567CF494D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AR LocationsTests/Pods-AR LocationsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AR LocationsTests/Pods-AR LocationsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AR LocationsTests/Pods-AR LocationsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		041AFE1C22CF70EE00BDDBB6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041AFEC122CF8F2700BDDBB6 /* StartSceneInteractor.swift in Sources */,
+				041AFE5422CF74D500BDDBB6 /* YaLocationManager.swift in Sources */,
+				041AFEBD22CF8F2700BDDBB6 /* StartSceneModels.swift in Sources */,
+				041AFE8C22CF766900BDDBB6 /* Optional+adds.swift in Sources */,
+				041AFE9222CF766900BDDBB6 /* String+additions.swift in Sources */,
+				041AFE7A22CF766900BDDBB6 /* UIImageView+adds.swift in Sources */,
+				041AFEBF22CF8F2700BDDBB6 /* StartSceneViewController.swift in Sources */,
+				041AFE8E22CF766900BDDBB6 /* Int+additions.swift in Sources */,
+				041AFE5522CF74D500BDDBB6 /* LoggerManager.swift in Sources */,
+				041AFE9822CF766900BDDBB6 /* URL+ads.swift in Sources */,
+				041AFEBB22CF8F2700BDDBB6 /* StartSceneRouter.swift in Sources */,
+				041AFE5622CF74D500BDDBB6 /* CustomPhotoAlbum.swift in Sources */,
+				041AFE5322CF74D500BDDBB6 /* ArCameraManager.swift in Sources */,
+				041AFE7C22CF766900BDDBB6 /* UIButton+adds.swift in Sources */,
+				041AFEAC22CF794100BDDBB6 /* AlertMessage.swift in Sources */,
+				041AFE8222CF766900BDDBB6 /* UserDefaults+adds.swift in Sources */,
+				041AFE4F22CF74D500BDDBB6 /* YaExifManager.swift in Sources */,
+				041AFE9022CF766900BDDBB6 /* simd+adds.swift in Sources */,
 				041AFE2822CF70EE00BDDBB6 /* ViewController.swift in Sources */,
+				041AFEA422CF766900BDDBB6 /* UIAlertController+adds.swift in Sources */,
+				041AFEA622CF766900BDDBB6 /* PHAsset+adds.swift in Sources */,
+				041AFE8422CF766900BDDBB6 /* UIColor+additions.swift in Sources */,
+				041AFEA022CF766900BDDBB6 /* UIDevice+adds.swift in Sources */,
+				041AFE7E22CF766900BDDBB6 /* UITextView+additions.swift in Sources */,
+				041AFE8022CF766900BDDBB6 /* SCNVector3+adds.swift in Sources */,
 				041AFE2422CF70EE00BDDBB6 /* AppDelegate.swift in Sources */,
+				041AFE9422CF766900BDDBB6 /* CLLocation+adds.swift in Sources */,
+				041AFE8622CF766900BDDBB6 /* ARSession+additions.swift in Sources */,
+				041AFE5022CF74D500BDDBB6 /* YaMotionManager.swift in Sources */,
+				041AFEA222CF766900BDDBB6 /* CGPoint+adds.swift in Sources */,
+				041AFEC322CF8F2700BDDBB6 /* StartSceneConfigurator.swift in Sources */,
+				041AFE8A22CF766900BDDBB6 /* Data+adds.swift in Sources */,
+				041AFEB922CF8F2700BDDBB6 /* StartSceneWorker.swift in Sources */,
+				041AFE9A22CF766900BDDBB6 /* SCNNode+additions.swift in Sources */,
+				041AFEB722CF8F2700BDDBB6 /* StartScenePresenter.swift in Sources */,
+				041AFE9622CF766900BDDBB6 /* UIImage+additions.swift in Sources */,
+				041AFE9C22CF766900BDDBB6 /* UIView+adds.swift in Sources */,
+				041AFE9E22CF766900BDDBB6 /* UIViewController+additions.swift in Sources */,
+				041AFE8822CF766900BDDBB6 /* Date+adds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +599,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041AFE5D22CF74DE00BDDBB6 /* YaLocationManager.swift in Sources */,
+				041AFEA522CF766900BDDBB6 /* UIAlertController+adds.swift in Sources */,
+				041AFE5A22CF74DE00BDDBB6 /* LoggerManager.swift in Sources */,
+				041AFE9F22CF766900BDDBB6 /* UIViewController+additions.swift in Sources */,
+				041AFE9122CF766900BDDBB6 /* simd+adds.swift in Sources */,
 				041AFE3B22CF70F100BDDBB6 /* AR_LocationsTests.swift in Sources */,
+				041AFE5722CF74DE00BDDBB6 /* ArCameraManager.swift in Sources */,
+				041AFE9722CF766900BDDBB6 /* UIImage+additions.swift in Sources */,
+				041AFEB822CF8F2700BDDBB6 /* StartScenePresenter.swift in Sources */,
+				041AFE9B22CF766900BDDBB6 /* SCNNode+additions.swift in Sources */,
+				041AFE8122CF766900BDDBB6 /* SCNVector3+adds.swift in Sources */,
+				041AFE9922CF766900BDDBB6 /* URL+ads.swift in Sources */,
+				041AFE8722CF766900BDDBB6 /* ARSession+additions.swift in Sources */,
+				041AFE7D22CF766900BDDBB6 /* UIButton+adds.swift in Sources */,
+				041AFE7B22CF766900BDDBB6 /* UIImageView+adds.swift in Sources */,
+				041AFEC222CF8F2700BDDBB6 /* StartSceneInteractor.swift in Sources */,
+				041AFE8D22CF766900BDDBB6 /* Optional+adds.swift in Sources */,
+				041AFE8922CF766900BDDBB6 /* Date+adds.swift in Sources */,
+				041AFE9D22CF766900BDDBB6 /* UIView+adds.swift in Sources */,
+				041AFEAD22CF794100BDDBB6 /* AlertMessage.swift in Sources */,
+				041AFE8522CF766900BDDBB6 /* UIColor+additions.swift in Sources */,
+				041AFEC022CF8F2700BDDBB6 /* StartSceneViewController.swift in Sources */,
+				041AFE5922CF74DE00BDDBB6 /* CustomPhotoAlbum.swift in Sources */,
+				041AFE8B22CF766900BDDBB6 /* Data+adds.swift in Sources */,
+				041AFE8F22CF766900BDDBB6 /* Int+additions.swift in Sources */,
+				041AFEBE22CF8F2700BDDBB6 /* StartSceneModels.swift in Sources */,
+				041AFE8322CF766900BDDBB6 /* UserDefaults+adds.swift in Sources */,
+				041AFEA122CF766900BDDBB6 /* UIDevice+adds.swift in Sources */,
+				041AFE7F22CF766900BDDBB6 /* UITextView+additions.swift in Sources */,
+				041AFEBC22CF8F2700BDDBB6 /* StartSceneRouter.swift in Sources */,
+				041AFE5E22CF74DE00BDDBB6 /* YaMotionManager.swift in Sources */,
+				041AFEA322CF766900BDDBB6 /* CGPoint+adds.swift in Sources */,
+				041AFE9322CF766900BDDBB6 /* String+additions.swift in Sources */,
+				041AFE5C22CF74DE00BDDBB6 /* YaExifManager.swift in Sources */,
+				041AFEBA22CF8F2700BDDBB6 /* StartSceneWorker.swift in Sources */,
+				041AFEA722CF766900BDDBB6 /* PHAsset+adds.swift in Sources */,
+				041AFE9522CF766900BDDBB6 /* CLLocation+adds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,16 +787,17 @@
 		};
 		041AFE4022CF70F200BDDBB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BC3B2BC97E22EF388435828 /* Pods-AR Locations.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z8JVJD6M2F;
-				INFOPLIST_FILE = "AR Locations/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AR Locations/Settings/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lammax.ios.ar.locations.AR-Locations";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lammax.ios.ar.locations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -380,16 +806,17 @@
 		};
 		041AFE4122CF70F200BDDBB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4787F02FE533C874C94F062B /* Pods-AR Locations.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z8JVJD6M2F;
-				INFOPLIST_FILE = "AR Locations/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AR Locations/Settings/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lammax.ios.ar.locations.AR-Locations";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lammax.ios.ar.locations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -398,6 +825,7 @@
 		};
 		041AFE4322CF70F200BDDBB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DD5F580A21F4D323FE0B803 /* Pods-AR LocationsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -419,6 +847,7 @@
 		};
 		041AFE4422CF70F200BDDBB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E09EA35587F41D524C7D0FE2 /* Pods-AR LocationsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
