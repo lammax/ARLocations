@@ -21,18 +21,54 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </arscnView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khL-OB-KMz">
+                                <rect key="frame" x="186" y="213.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USm-he-Ev8">
+                                <rect key="frame" x="186" y="325.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWb-7A-V9j">
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb2-fW-UT3">
+                                <rect key="frame" x="186" y="549.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="UWb-7A-V9j" firstAttribute="centerY" secondItem="U0K-SW-4ec" secondAttribute="centerY" id="8ae-YC-s9z"/>
+                            <constraint firstItem="khL-OB-KMz" firstAttribute="centerY" secondItem="U0K-SW-4ec" secondAttribute="centerY" multiplier="0.5" id="9Ex-kE-hc2"/>
+                            <constraint firstItem="USm-he-Ev8" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="DYb-rj-Iec"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
+                            <constraint firstItem="Kb2-fW-UT3" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="SgA-I1-6tS"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
+                            <constraint firstItem="UWb-7A-V9j" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="YgP-nI-Kap"/>
+                            <constraint firstItem="khL-OB-KMz" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="aYY-ky-83c"/>
+                            <constraint firstItem="USm-he-Ev8" firstAttribute="centerY" secondItem="U0K-SW-4ec" secondAttribute="centerY" multiplier="0.75" id="hME-q7-fRG"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
+                            <constraint firstItem="Kb2-fW-UT3" firstAttribute="centerY" secondItem="U0K-SW-4ec" secondAttribute="centerY" multiplier="1.25" id="vnL-KG-gvc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
                     <connections>
                         <outlet property="arSceneView" destination="BrB-h1-WRS" id="iGV-us-Gzg"/>
+                        <outlet property="gpsAccuracyLabel" destination="Kb2-fW-UT3" id="hlx-0A-p2E"/>
+                        <outlet property="gpsCoordinateLabel" destination="UWb-7A-V9j" id="wpm-zx-SNL"/>
+                        <outlet property="gravityLabel" destination="khL-OB-KMz" id="DPl-f1-MMm"/>
+                        <outlet property="northLabel" destination="USm-he-Ev8" id="xvX-CH-EFG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -74,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="710.14492753623199" y="20.758928571428569"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Swipe Navigation Controller-->
         <scene sceneID="xTl-ya-Bd5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Ukg-0G-n1k" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Ukg-0G-n1k" customClass="SwipeNavigationController" customModule="AR_Locations" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V0z-RC-9Re">
                         <autoresizingMask key="autoresizingMask"/>

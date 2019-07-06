@@ -13,6 +13,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import CoreLocation
 
 protocol ARSceneDisplayLogic: class {
     func displaySomething(viewModel: ARScene.Something.ViewModel)
@@ -21,8 +22,16 @@ protocol ARSceneDisplayLogic: class {
 class ARSceneViewController: UIViewController {
     var interactor: ARSceneBusinessLogic?
     var router: (NSObjectProtocol & ARSceneRoutingLogic & ARSceneDataPassing)?
+    
+    let motionManager: MotionManager = MotionManager.sharedInstance
+    let locationManager: LocationManager = LocationManager.sharedInstance
+    let exifManager: ExifManager = ExifManager.sharedInstance
 
     @IBOutlet weak var arSceneView: ARSCNView!
+    @IBOutlet weak var gravityLabel: UILabel!
+    @IBOutlet weak var northLabel: UILabel!
+    @IBOutlet weak var gpsCoordinateLabel: UILabel!
+    @IBOutlet weak var gpsAccuracyLabel: UILabel!
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -68,6 +77,8 @@ class ARSceneViewController: UIViewController {
     //@IBOutlet weak var nameTextField: UITextField!
 
     func doOnDidLoad() {
+        self.motionManager.delegate = self
+        self.locationManager.delegate = self
         let request = ARScene.Something.Request()
         interactor?.doSomeLogic(request: request)
     }
@@ -78,7 +89,6 @@ class ARSceneViewController: UIViewController {
         
         // Show statistics such as fps and timing information
         arSceneView.showsStatistics = true
-        
         
         // Create a new scene
         let scene = SCNScene(named: "art.scnassets/ship.scn")!
@@ -147,6 +157,43 @@ extension ARSceneViewController: ARSessionDelegate {
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         // self.delegate?.arCameraManager(didFrameUpdate: frame, for: session)
+    }
+    
+}
+
+extension ARSceneViewController: MotionManagerDelegate {
+    func motionManager(didSensorUpdate sensor: [SensorData : DataVector]) {
+        DispatchQueue.main.async {
+            if let gravityData: DataVector = sensor[SensorData.gravity] {
+                if gravityData.y < -0.5 {
+                    self.gravityLabel.textColor = .blue
+                } else {
+                    self.gravityLabel.textColor = .red
+                }
+                self.gravityLabel.text = self.motionManager.dataToString(dataVector: gravityData, decimal: 3)
+            }
+        }
+    }
+}
+
+extension ARSceneViewController: LocationManagerDelegate {
+    func locationManager(didLocationUpdate location: CLLocation) {
+        DispatchQueue.main.async {
+            self.gpsCoordinateLabel.text = "GPS: \(self.exifManager.getLocatonPoint(location: location))"
+            self.gpsAccuracyLabel.text = "Accuracy: " + String(format: "%.2f", arguments: [self.exifManager.getLocatonAccuracy(location: location)])
+        }
+    }
+    
+    func locationManager(didHeadingUpdate heading: CLHeading) {
+        DispatchQueue.main.async {
+            self.northLabel.text = "TNorth: \(self.exifManager.getHeading(heading: heading, north: .True))"
+        }
+    }
+    
+    func locationManager(didErrorUpdate error: Error) {
+        DispatchQueue.main.async {
+            self.showErrorAlert(error: error)
+        }
     }
     
 }

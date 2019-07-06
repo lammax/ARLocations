@@ -9,23 +9,16 @@
 /* Begin PBXBuildFile section */
 		041AFE2422CF70EE00BDDBB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE2322CF70EE00BDDBB6 /* AppDelegate.swift */; };
 		041AFE2622CF70EE00BDDBB6 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 041AFE2522CF70EE00BDDBB6 /* art.scnassets */; };
-		041AFE2822CF70EE00BDDBB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE2722CF70EE00BDDBB6 /* ViewController.swift */; };
 		041AFE2B22CF70EE00BDDBB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041AFE2922CF70EE00BDDBB6 /* Main.storyboard */; };
 		041AFE2D22CF70F100BDDBB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041AFE2C22CF70F100BDDBB6 /* Assets.xcassets */; };
 		041AFE3022CF70F100BDDBB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041AFE2E22CF70F100BDDBB6 /* LaunchScreen.storyboard */; };
 		041AFE3B22CF70F100BDDBB6 /* AR_LocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE3A22CF70F100BDDBB6 /* AR_LocationsTests.swift */; };
-		041AFE4F22CF74D500BDDBB6 /* YaExifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4722CF74D500BDDBB6 /* YaExifManager.swift */; };
-		041AFE5022CF74D500BDDBB6 /* YaMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4822CF74D500BDDBB6 /* YaMotionManager.swift */; };
-		041AFE5322CF74D500BDDBB6 /* ArCameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4B22CF74D500BDDBB6 /* ArCameraManager.swift */; };
-		041AFE5422CF74D500BDDBB6 /* YaLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4C22CF74D500BDDBB6 /* YaLocationManager.swift */; };
-		041AFE5522CF74D500BDDBB6 /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4D22CF74D500BDDBB6 /* LoggerManager.swift */; };
-		041AFE5622CF74D500BDDBB6 /* CustomPhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4E22CF74D500BDDBB6 /* CustomPhotoAlbum.swift */; };
-		041AFE5722CF74DE00BDDBB6 /* ArCameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4B22CF74D500BDDBB6 /* ArCameraManager.swift */; };
-		041AFE5922CF74DE00BDDBB6 /* CustomPhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4E22CF74D500BDDBB6 /* CustomPhotoAlbum.swift */; };
-		041AFE5A22CF74DE00BDDBB6 /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4D22CF74D500BDDBB6 /* LoggerManager.swift */; };
-		041AFE5C22CF74DE00BDDBB6 /* YaExifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4722CF74D500BDDBB6 /* YaExifManager.swift */; };
-		041AFE5D22CF74DE00BDDBB6 /* YaLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4C22CF74D500BDDBB6 /* YaLocationManager.swift */; };
-		041AFE5E22CF74DE00BDDBB6 /* YaMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4822CF74D500BDDBB6 /* YaMotionManager.swift */; };
+		041AFE4F22CF74D500BDDBB6 /* ExifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4722CF74D500BDDBB6 /* ExifManager.swift */; };
+		041AFE5022CF74D500BDDBB6 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4822CF74D500BDDBB6 /* MotionManager.swift */; };
+		041AFE5422CF74D500BDDBB6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4C22CF74D500BDDBB6 /* LocationManager.swift */; };
+		041AFE5C22CF74DE00BDDBB6 /* ExifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4722CF74D500BDDBB6 /* ExifManager.swift */; };
+		041AFE5D22CF74DE00BDDBB6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4C22CF74D500BDDBB6 /* LocationManager.swift */; };
+		041AFE5E22CF74DE00BDDBB6 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE4822CF74D500BDDBB6 /* MotionManager.swift */; };
 		041AFE7A22CF766900BDDBB6 /* UIImageView+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6322CF766800BDDBB6 /* UIImageView+adds.swift */; };
 		041AFE7B22CF766900BDDBB6 /* UIImageView+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6322CF766800BDDBB6 /* UIImageView+adds.swift */; };
 		041AFE7C22CF766900BDDBB6 /* UIButton+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFE6422CF766800BDDBB6 /* UIButton+adds.swift */; };
@@ -94,6 +87,7 @@
 		041AFED022CF92CF00BDDBB6 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEC922CF92CF00BDDBB6 /* ARSceneViewController.swift */; };
 		041AFED122CF92CF00BDDBB6 /* ARSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFECA22CF92CF00BDDBB6 /* ARSceneInteractor.swift */; };
 		041AFED222CF92CF00BDDBB6 /* ARSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFECB22CF92CF00BDDBB6 /* ARSceneConfigurator.swift */; };
+		041AFED622D0B79500BDDBB6 /* SwipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFED422D0B79500BDDBB6 /* SwipeNavigationController.swift */; };
 		3986E7E1AFD6AD8342DFF3E3 /* Pods_AR_LocationsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CBBF78AC27CDC18CD7826A9 /* Pods_AR_LocationsTests.framework */; };
 		ADE794924EE5648BD13A980D /* Pods_AR_Locations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146332E555F040693775BFFD /* Pods_AR_Locations.framework */; };
 /* End PBXBuildFile section */
@@ -112,7 +106,6 @@
 		041AFE2022CF70EE00BDDBB6 /* AR Locations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Locations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		041AFE2322CF70EE00BDDBB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		041AFE2522CF70EE00BDDBB6 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		041AFE2722CF70EE00BDDBB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		041AFE2A22CF70EE00BDDBB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		041AFE2C22CF70F100BDDBB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		041AFE2F22CF70F100BDDBB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -120,12 +113,9 @@
 		041AFE3622CF70F100BDDBB6 /* AR LocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AR LocationsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		041AFE3A22CF70F100BDDBB6 /* AR_LocationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_LocationsTests.swift; sourceTree = "<group>"; };
 		041AFE3C22CF70F100BDDBB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		041AFE4722CF74D500BDDBB6 /* YaExifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YaExifManager.swift; sourceTree = "<group>"; };
-		041AFE4822CF74D500BDDBB6 /* YaMotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YaMotionManager.swift; sourceTree = "<group>"; };
-		041AFE4B22CF74D500BDDBB6 /* ArCameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArCameraManager.swift; sourceTree = "<group>"; };
-		041AFE4C22CF74D500BDDBB6 /* YaLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YaLocationManager.swift; sourceTree = "<group>"; };
-		041AFE4D22CF74D500BDDBB6 /* LoggerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerManager.swift; sourceTree = "<group>"; };
-		041AFE4E22CF74D500BDDBB6 /* CustomPhotoAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPhotoAlbum.swift; sourceTree = "<group>"; };
+		041AFE4722CF74D500BDDBB6 /* ExifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExifManager.swift; sourceTree = "<group>"; };
+		041AFE4822CF74D500BDDBB6 /* MotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		041AFE4C22CF74D500BDDBB6 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		041AFE6322CF766800BDDBB6 /* UIImageView+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+adds.swift"; sourceTree = "<group>"; };
 		041AFE6422CF766800BDDBB6 /* UIButton+adds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+adds.swift"; sourceTree = "<group>"; };
 		041AFE6522CF766800BDDBB6 /* UITextView+additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+additions.swift"; sourceTree = "<group>"; };
@@ -164,6 +154,7 @@
 		041AFEC922CF92CF00BDDBB6 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
 		041AFECA22CF92CF00BDDBB6 /* ARSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneInteractor.swift; sourceTree = "<group>"; };
 		041AFECB22CF92CF00BDDBB6 /* ARSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneConfigurator.swift; sourceTree = "<group>"; };
+		041AFED422D0B79500BDDBB6 /* SwipeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeNavigationController.swift; sourceTree = "<group>"; };
 		146332E555F040693775BFFD /* Pods_AR_Locations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Locations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBBF78AC27CDC18CD7826A9 /* Pods_AR_LocationsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_LocationsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC3B2BC97E22EF388435828 /* Pods-AR Locations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR Locations.debug.xcconfig"; path = "Target Support Files/Pods-AR Locations/Pods-AR Locations.debug.xcconfig"; sourceTree = "<group>"; };
@@ -236,6 +227,7 @@
 		041AFE4522CF73DE00BDDBB6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				041AFED322D0B76100BDDBB6 /* Custom classes */,
 				041AFEAA22CF791B00BDDBB6 /* Model */,
 				041AFE6222CF764500BDDBB6 /* Extensions */,
 				041AFE4622CF73FA00BDDBB6 /* Managers */,
@@ -246,12 +238,9 @@
 		041AFE4622CF73FA00BDDBB6 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				041AFE4B22CF74D500BDDBB6 /* ArCameraManager.swift */,
-				041AFE4E22CF74D500BDDBB6 /* CustomPhotoAlbum.swift */,
-				041AFE4D22CF74D500BDDBB6 /* LoggerManager.swift */,
-				041AFE4722CF74D500BDDBB6 /* YaExifManager.swift */,
-				041AFE4C22CF74D500BDDBB6 /* YaLocationManager.swift */,
-				041AFE4822CF74D500BDDBB6 /* YaMotionManager.swift */,
+				041AFE4722CF74D500BDDBB6 /* ExifManager.swift */,
+				041AFE4C22CF74D500BDDBB6 /* LocationManager.swift */,
+				041AFE4822CF74D500BDDBB6 /* MotionManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -348,7 +337,6 @@
 		041AFEAE22CF8E1800BDDBB6 /* ARScene */ = {
 			isa = PBXGroup;
 			children = (
-				041AFE2722CF70EE00BDDBB6 /* ViewController.swift */,
 				041AFEC522CF92CF00BDDBB6 /* ARScenePresenter.swift */,
 				041AFEC622CF92CF00BDDBB6 /* ARSceneWorker.swift */,
 				041AFEC722CF92CF00BDDBB6 /* ARSceneRouter.swift */,
@@ -365,6 +353,14 @@
 			children = (
 			);
 			path = MapScene;
+			sourceTree = "<group>";
+		};
+		041AFED322D0B76100BDDBB6 /* Custom classes */ = {
+			isa = PBXGroup;
+			children = (
+				041AFED422D0B79500BDDBB6 /* SwipeNavigationController.swift */,
+			);
+			path = "Custom classes";
 			sourceTree = "<group>";
 		};
 		C6C552C0282D089E83B697EC /* Frameworks */ = {
@@ -575,27 +571,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				041AFEC122CF8F2700BDDBB6 /* StartSceneInteractor.swift in Sources */,
-				041AFE5422CF74D500BDDBB6 /* YaLocationManager.swift in Sources */,
+				041AFE5422CF74D500BDDBB6 /* LocationManager.swift in Sources */,
+				041AFED622D0B79500BDDBB6 /* SwipeNavigationController.swift in Sources */,
 				041AFEBD22CF8F2700BDDBB6 /* StartSceneModels.swift in Sources */,
 				041AFE8C22CF766900BDDBB6 /* Optional+adds.swift in Sources */,
 				041AFE9222CF766900BDDBB6 /* String+additions.swift in Sources */,
 				041AFE7A22CF766900BDDBB6 /* UIImageView+adds.swift in Sources */,
 				041AFEBF22CF8F2700BDDBB6 /* StartSceneViewController.swift in Sources */,
 				041AFE8E22CF766900BDDBB6 /* Int+additions.swift in Sources */,
-				041AFE5522CF74D500BDDBB6 /* LoggerManager.swift in Sources */,
 				041AFE9822CF766900BDDBB6 /* URL+ads.swift in Sources */,
 				041AFECD22CF92CF00BDDBB6 /* ARSceneWorker.swift in Sources */,
 				041AFECC22CF92CF00BDDBB6 /* ARScenePresenter.swift in Sources */,
 				041AFEBB22CF8F2700BDDBB6 /* StartSceneRouter.swift in Sources */,
-				041AFE5622CF74D500BDDBB6 /* CustomPhotoAlbum.swift in Sources */,
-				041AFE5322CF74D500BDDBB6 /* ArCameraManager.swift in Sources */,
 				041AFE7C22CF766900BDDBB6 /* UIButton+adds.swift in Sources */,
 				041AFEAC22CF794100BDDBB6 /* AlertMessage.swift in Sources */,
 				041AFE8222CF766900BDDBB6 /* UserDefaults+adds.swift in Sources */,
 				041AFED022CF92CF00BDDBB6 /* ARSceneViewController.swift in Sources */,
-				041AFE4F22CF74D500BDDBB6 /* YaExifManager.swift in Sources */,
+				041AFE4F22CF74D500BDDBB6 /* ExifManager.swift in Sources */,
 				041AFE9022CF766900BDDBB6 /* simd+adds.swift in Sources */,
-				041AFE2822CF70EE00BDDBB6 /* ViewController.swift in Sources */,
 				041AFECF22CF92CF00BDDBB6 /* ARSceneModels.swift in Sources */,
 				041AFEA422CF766900BDDBB6 /* UIAlertController+adds.swift in Sources */,
 				041AFEA622CF766900BDDBB6 /* PHAsset+adds.swift in Sources */,
@@ -607,7 +600,7 @@
 				041AFE2422CF70EE00BDDBB6 /* AppDelegate.swift in Sources */,
 				041AFE9422CF766900BDDBB6 /* CLLocation+adds.swift in Sources */,
 				041AFE8622CF766900BDDBB6 /* ARSession+additions.swift in Sources */,
-				041AFE5022CF74D500BDDBB6 /* YaMotionManager.swift in Sources */,
+				041AFE5022CF74D500BDDBB6 /* MotionManager.swift in Sources */,
 				041AFEA222CF766900BDDBB6 /* CGPoint+adds.swift in Sources */,
 				041AFEC322CF8F2700BDDBB6 /* StartSceneConfigurator.swift in Sources */,
 				041AFE8A22CF766900BDDBB6 /* Data+adds.swift in Sources */,
@@ -627,13 +620,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				041AFE5D22CF74DE00BDDBB6 /* YaLocationManager.swift in Sources */,
+				041AFE5D22CF74DE00BDDBB6 /* LocationManager.swift in Sources */,
 				041AFEA522CF766900BDDBB6 /* UIAlertController+adds.swift in Sources */,
-				041AFE5A22CF74DE00BDDBB6 /* LoggerManager.swift in Sources */,
 				041AFE9F22CF766900BDDBB6 /* UIViewController+additions.swift in Sources */,
 				041AFE9122CF766900BDDBB6 /* simd+adds.swift in Sources */,
 				041AFE3B22CF70F100BDDBB6 /* AR_LocationsTests.swift in Sources */,
-				041AFE5722CF74DE00BDDBB6 /* ArCameraManager.swift in Sources */,
 				041AFE9722CF766900BDDBB6 /* UIImage+additions.swift in Sources */,
 				041AFEB822CF8F2700BDDBB6 /* StartScenePresenter.swift in Sources */,
 				041AFE9B22CF766900BDDBB6 /* SCNNode+additions.swift in Sources */,
@@ -649,7 +640,6 @@
 				041AFEAD22CF794100BDDBB6 /* AlertMessage.swift in Sources */,
 				041AFE8522CF766900BDDBB6 /* UIColor+additions.swift in Sources */,
 				041AFEC022CF8F2700BDDBB6 /* StartSceneViewController.swift in Sources */,
-				041AFE5922CF74DE00BDDBB6 /* CustomPhotoAlbum.swift in Sources */,
 				041AFE8B22CF766900BDDBB6 /* Data+adds.swift in Sources */,
 				041AFE8F22CF766900BDDBB6 /* Int+additions.swift in Sources */,
 				041AFEBE22CF8F2700BDDBB6 /* StartSceneModels.swift in Sources */,
@@ -657,10 +647,10 @@
 				041AFEA122CF766900BDDBB6 /* UIDevice+adds.swift in Sources */,
 				041AFE7F22CF766900BDDBB6 /* UITextView+additions.swift in Sources */,
 				041AFEBC22CF8F2700BDDBB6 /* StartSceneRouter.swift in Sources */,
-				041AFE5E22CF74DE00BDDBB6 /* YaMotionManager.swift in Sources */,
+				041AFE5E22CF74DE00BDDBB6 /* MotionManager.swift in Sources */,
 				041AFEA322CF766900BDDBB6 /* CGPoint+adds.swift in Sources */,
 				041AFE9322CF766900BDDBB6 /* String+additions.swift in Sources */,
-				041AFE5C22CF74DE00BDDBB6 /* YaExifManager.swift in Sources */,
+				041AFE5C22CF74DE00BDDBB6 /* ExifManager.swift in Sources */,
 				041AFEBA22CF8F2700BDDBB6 /* StartSceneWorker.swift in Sources */,
 				041AFEA722CF766900BDDBB6 /* PHAsset+adds.swift in Sources */,
 				041AFE9522CF766900BDDBB6 /* CLLocation+adds.swift in Sources */,
