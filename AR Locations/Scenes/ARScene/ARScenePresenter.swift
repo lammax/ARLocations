@@ -13,7 +13,9 @@
 import UIKit
 
 protocol ARScenePresentationLogic {
-    func presentSomething(response: ARScene.Something.Response)
+    func presentBackFromMap(response: ARScene.BackFromMap.Response)
+    func presentStartAR(response: ARScene.StartAR.Response)
+    func presentSaveLocation(response: ARScene.SaveLocation.Response)
 }
 
 class ARScenePresenter: ARScenePresentationLogic {
@@ -21,9 +23,19 @@ class ARScenePresenter: ARScenePresentationLogic {
 
     // MARK: Do something
 
-    func presentSomething(response: ARScene.Something.Response) {
-        let viewModel = ARScene.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentBackFromMap(response: ARScene.BackFromMap.Response) {
+        let viewModel = ARScene.BackFromMap.ViewModel()
+        viewController?.displayBackFromMap(viewModel: viewModel)
+    }
+    
+    func presentStartAR(response: ARScene.StartAR.Response) {
+        let viewModel = ARScene.StartAR.ViewModel()
+        viewController?.displayStartAR(viewModel: viewModel)
+    }
+    
+    func presentSaveLocation(response: ARScene.SaveLocation.Response) {
+        let viewModel = ARScene.SaveLocation.ViewModel(location: response.location)
+        viewController?.displaySaveLocation(viewModel: viewModel)
     }
     
 }

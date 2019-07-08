@@ -16,7 +16,9 @@ import ARKit
 import CoreLocation
 
 protocol ARSceneDisplayLogic: class {
-    func displaySomething(viewModel: ARScene.Something.ViewModel)
+    func displayBackFromMap(viewModel: ARScene.BackFromMap.ViewModel)
+    func displayStartAR(viewModel: ARScene.StartAR.ViewModel)
+    func displaySaveLocation(viewModel: ARScene.SaveLocation.ViewModel)
 }
 
 class ARSceneViewController: UIViewController {
@@ -26,6 +28,8 @@ class ARSceneViewController: UIViewController {
     let motionManager: MotionManager = MotionManager.sharedInstance
     let locationManager: LocationManager = LocationManager.sharedInstance
     let exifManager: ExifManager = ExifManager.sharedInstance
+    
+    var isMapSceneLoaded: Bool = false
 
     @IBOutlet weak var arSceneView: ARSCNView!
     @IBOutlet weak var gravityLabel: UILabel!
@@ -58,6 +62,12 @@ class ARSceneViewController: UIViewController {
         
         // Run the view's session
         arSceneView.session.run(.makeBaseConfiguration(), options: [.removeExistingAnchors, .resetTracking])
+
+        self.isMapSceneLoaded = false
+        self.motionManager.delegate = self
+        self.locationManager.delegate = self
+        self.motionManager.startUpdate()
+        self.locationManager.startUpdating()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -79,8 +89,8 @@ class ARSceneViewController: UIViewController {
     func doOnDidLoad() {
         self.motionManager.delegate = self
         self.locationManager.delegate = self
-        let request = ARScene.Something.Request()
-        interactor?.doSomeLogic(request: request)
+        let request = ARScene.StartAR.Request()
+        interactor?.startAR(request: request)
     }
     
     private func runAR() {
@@ -99,15 +109,30 @@ class ARSceneViewController: UIViewController {
         arSceneView.autoenablesDefaultLighting = true
         arSceneView.session.delegate = self
     }
-  
+    
+    private func saveLocation(location: CLLocation) {
+        let request = ARScene.SaveLocation.Request(location: location)
+        interactor?.saveLocation(request: request)
+    }
+    
  }
 
 extension ARSceneViewController: ARSceneDisplayLogic {
     
-    func displaySomething(viewModel: ARScene.Something.ViewModel) {
-        self.runAR()
+    func displayBackFromMap(viewModel: ARScene.BackFromMap.ViewModel) {
     }
 
+    func displayStartAR(viewModel: ARScene.StartAR.ViewModel) {
+        self.runAR()
+    }
+    
+    func displaySaveLocation(viewModel: ARScene.SaveLocation.ViewModel) {
+        DispatchQueue.main.async {
+            self.gpsCoordinateLabel.text = "GPS: \(self.exifManager.getLocatonPoint(location: viewModel.location))"
+            self.gpsAccuracyLabel.text = "Accuracy: " + String(format: "%.2f", arguments: [self.exifManager.getLocatonAccuracy(location: viewModel.location)])
+        }
+    }
+    
 }
 
 private extension ARConfiguration {
@@ -163,25 +188,21 @@ extension ARSceneViewController: ARSessionDelegate {
 
 extension ARSceneViewController: MotionManagerDelegate {
     func motionManager(didSensorUpdate sensor: [SensorData : DataVector]) {
-        DispatchQueue.main.async {
-            if let gravityData: DataVector = sensor[SensorData.gravity] {
-                if gravityData.y < -0.5 {
-                    self.gravityLabel.textColor = .blue
-                } else {
-                    self.gravityLabel.textColor = .red
-                }
-                self.gravityLabel.text = self.motionManager.dataToString(dataVector: gravityData, decimal: 3)
+        if let gravityData: DataVector = sensor[SensorData.gravity] {
+            if gravityData.y < -0.5 {
+                self.gravityLabel.textColor = .blue
+            } else if !self.isMapSceneLoaded{
+                self.router?.routeToMapScene()
+                self.isMapSceneLoaded = true
             }
+            self.gravityLabel.text = self.motionManager.dataToString(dataVector: gravityData, decimal: 3)
         }
     }
 }
 
 extension ARSceneViewController: LocationManagerDelegate {
     func locationManager(didLocationUpdate location: CLLocation) {
-        DispatchQueue.main.async {
-            self.gpsCoordinateLabel.text = "GPS: \(self.exifManager.getLocatonPoint(location: location))"
-            self.gpsAccuracyLabel.text = "Accuracy: " + String(format: "%.2f", arguments: [self.exifManager.getLocatonAccuracy(location: location)])
-        }
+        self.saveLocation(location: location)
     }
     
     func locationManager(didHeadingUpdate heading: CLHeading) {
@@ -194,6 +215,5 @@ extension ARSceneViewController: LocationManagerDelegate {
         DispatchQueue.main.async {
             self.showErrorAlert(error: error)
         }
-    }
-    
+    } 
 }

@@ -88,6 +88,13 @@
 		041AFED122CF92CF00BDDBB6 /* ARSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFECA22CF92CF00BDDBB6 /* ARSceneInteractor.swift */; };
 		041AFED222CF92CF00BDDBB6 /* ARSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFECB22CF92CF00BDDBB6 /* ARSceneConfigurator.swift */; };
 		041AFED622D0B79500BDDBB6 /* SwipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFED422D0B79500BDDBB6 /* SwipeNavigationController.swift */; };
+		041AFEDF22D0DCF400BDDBB6 /* MapScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFED822D0DCF400BDDBB6 /* MapScenePresenter.swift */; };
+		041AFEE022D0DCF400BDDBB6 /* MapSceneWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFED922D0DCF400BDDBB6 /* MapSceneWorker.swift */; };
+		041AFEE122D0DCF400BDDBB6 /* MapSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEDA22D0DCF400BDDBB6 /* MapSceneRouter.swift */; };
+		041AFEE222D0DCF400BDDBB6 /* MapSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEDB22D0DCF400BDDBB6 /* MapSceneModels.swift */; };
+		041AFEE322D0DCF400BDDBB6 /* MapSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEDC22D0DCF400BDDBB6 /* MapSceneViewController.swift */; };
+		041AFEE422D0DCF400BDDBB6 /* MapSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEDD22D0DCF400BDDBB6 /* MapSceneInteractor.swift */; };
+		041AFEE522D0DCF400BDDBB6 /* MapSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEDE22D0DCF400BDDBB6 /* MapSceneConfigurator.swift */; };
 		3986E7E1AFD6AD8342DFF3E3 /* Pods_AR_LocationsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CBBF78AC27CDC18CD7826A9 /* Pods_AR_LocationsTests.framework */; };
 		ADE794924EE5648BD13A980D /* Pods_AR_Locations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146332E555F040693775BFFD /* Pods_AR_Locations.framework */; };
 /* End PBXBuildFile section */
@@ -155,6 +162,13 @@
 		041AFECA22CF92CF00BDDBB6 /* ARSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneInteractor.swift; sourceTree = "<group>"; };
 		041AFECB22CF92CF00BDDBB6 /* ARSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneConfigurator.swift; sourceTree = "<group>"; };
 		041AFED422D0B79500BDDBB6 /* SwipeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeNavigationController.swift; sourceTree = "<group>"; };
+		041AFED822D0DCF400BDDBB6 /* MapScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScenePresenter.swift; sourceTree = "<group>"; };
+		041AFED922D0DCF400BDDBB6 /* MapSceneWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneWorker.swift; sourceTree = "<group>"; };
+		041AFEDA22D0DCF400BDDBB6 /* MapSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneRouter.swift; sourceTree = "<group>"; };
+		041AFEDB22D0DCF400BDDBB6 /* MapSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneModels.swift; sourceTree = "<group>"; };
+		041AFEDC22D0DCF400BDDBB6 /* MapSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneViewController.swift; sourceTree = "<group>"; };
+		041AFEDD22D0DCF400BDDBB6 /* MapSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneInteractor.swift; sourceTree = "<group>"; };
+		041AFEDE22D0DCF400BDDBB6 /* MapSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneConfigurator.swift; sourceTree = "<group>"; };
 		146332E555F040693775BFFD /* Pods_AR_Locations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Locations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBBF78AC27CDC18CD7826A9 /* Pods_AR_LocationsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_LocationsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC3B2BC97E22EF388435828 /* Pods-AR Locations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR Locations.debug.xcconfig"; path = "Target Support Files/Pods-AR Locations/Pods-AR Locations.debug.xcconfig"; sourceTree = "<group>"; };
@@ -351,6 +365,13 @@
 		041AFEAF22CF8E2700BDDBB6 /* MapScene */ = {
 			isa = PBXGroup;
 			children = (
+				041AFED822D0DCF400BDDBB6 /* MapScenePresenter.swift */,
+				041AFED922D0DCF400BDDBB6 /* MapSceneWorker.swift */,
+				041AFEDA22D0DCF400BDDBB6 /* MapSceneRouter.swift */,
+				041AFEDB22D0DCF400BDDBB6 /* MapSceneModels.swift */,
+				041AFEDC22D0DCF400BDDBB6 /* MapSceneViewController.swift */,
+				041AFEDD22D0DCF400BDDBB6 /* MapSceneInteractor.swift */,
+				041AFEDE22D0DCF400BDDBB6 /* MapSceneConfigurator.swift */,
 			);
 			path = MapScene;
 			sourceTree = "<group>";
@@ -576,15 +597,19 @@
 				041AFEBD22CF8F2700BDDBB6 /* StartSceneModels.swift in Sources */,
 				041AFE8C22CF766900BDDBB6 /* Optional+adds.swift in Sources */,
 				041AFE9222CF766900BDDBB6 /* String+additions.swift in Sources */,
+				041AFEE122D0DCF400BDDBB6 /* MapSceneRouter.swift in Sources */,
+				041AFEE022D0DCF400BDDBB6 /* MapSceneWorker.swift in Sources */,
 				041AFE7A22CF766900BDDBB6 /* UIImageView+adds.swift in Sources */,
 				041AFEBF22CF8F2700BDDBB6 /* StartSceneViewController.swift in Sources */,
 				041AFE8E22CF766900BDDBB6 /* Int+additions.swift in Sources */,
 				041AFE9822CF766900BDDBB6 /* URL+ads.swift in Sources */,
+				041AFEDF22D0DCF400BDDBB6 /* MapScenePresenter.swift in Sources */,
 				041AFECD22CF92CF00BDDBB6 /* ARSceneWorker.swift in Sources */,
 				041AFECC22CF92CF00BDDBB6 /* ARScenePresenter.swift in Sources */,
 				041AFEBB22CF8F2700BDDBB6 /* StartSceneRouter.swift in Sources */,
 				041AFE7C22CF766900BDDBB6 /* UIButton+adds.swift in Sources */,
 				041AFEAC22CF794100BDDBB6 /* AlertMessage.swift in Sources */,
+				041AFEE322D0DCF400BDDBB6 /* MapSceneViewController.swift in Sources */,
 				041AFE8222CF766900BDDBB6 /* UserDefaults+adds.swift in Sources */,
 				041AFED022CF92CF00BDDBB6 /* ARSceneViewController.swift in Sources */,
 				041AFE4F22CF74D500BDDBB6 /* ExifManager.swift in Sources */,
@@ -592,6 +617,7 @@
 				041AFECF22CF92CF00BDDBB6 /* ARSceneModels.swift in Sources */,
 				041AFEA422CF766900BDDBB6 /* UIAlertController+adds.swift in Sources */,
 				041AFEA622CF766900BDDBB6 /* PHAsset+adds.swift in Sources */,
+				041AFEE522D0DCF400BDDBB6 /* MapSceneConfigurator.swift in Sources */,
 				041AFED122CF92CF00BDDBB6 /* ARSceneInteractor.swift in Sources */,
 				041AFE8422CF766900BDDBB6 /* UIColor+additions.swift in Sources */,
 				041AFEA022CF766900BDDBB6 /* UIDevice+adds.swift in Sources */,
@@ -608,11 +634,13 @@
 				041AFEB922CF8F2700BDDBB6 /* StartSceneWorker.swift in Sources */,
 				041AFE9A22CF766900BDDBB6 /* SCNNode+additions.swift in Sources */,
 				041AFED222CF92CF00BDDBB6 /* ARSceneConfigurator.swift in Sources */,
+				041AFEE422D0DCF400BDDBB6 /* MapSceneInteractor.swift in Sources */,
 				041AFEB722CF8F2700BDDBB6 /* StartScenePresenter.swift in Sources */,
 				041AFE9622CF766900BDDBB6 /* UIImage+additions.swift in Sources */,
 				041AFE9C22CF766900BDDBB6 /* UIView+adds.swift in Sources */,
 				041AFE9E22CF766900BDDBB6 /* UIViewController+additions.swift in Sources */,
 				041AFE8822CF766900BDDBB6 /* Date+adds.swift in Sources */,
+				041AFEE222D0DCF400BDDBB6 /* MapSceneModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

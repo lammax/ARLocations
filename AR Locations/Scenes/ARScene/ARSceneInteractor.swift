@@ -11,13 +11,17 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol ARSceneBusinessLogic {
-    func doSomeLogic(request: ARScene.Something.Request)
+    func startAR(request: ARScene.StartAR.Request)
+    func backFromMap(request: ARScene.BackFromMap.Request)
+    func saveLocation(request: ARScene.SaveLocation.Request)
 }
 
 protocol ARSceneDataStore {
-    //var name: String { get set }
+    var currentLocation: CLLocation? { get set }
+    var backFromMap: Bool { get set }
 }
 
 class ARSceneInteractor: ARSceneDataStore {
@@ -26,25 +30,41 @@ class ARSceneInteractor: ARSceneDataStore {
     var worker: ARSceneWorker?
     
     //MARK: DataStore
-    //var name: String = ""
+    var currentLocation: CLLocation?
+    var backFromMap: Bool = false {
+        didSet {
+            if backFromMap {
+                self.doBackFromMap()
+            }
+        }
+    }
 
     // MARK: Do stuff
     
-    private func doSomething() {
-        let request = ARScene.Something.Request()
-        self.doSomeLogic(request: request)
+    private func doBackFromMap() {
+        self.backFromMap = false
+        let request = ARScene.BackFromMap.Request()
+        self.backFromMap(request: request)
     }
 
 }
 
 extension ARSceneInteractor: ARSceneBusinessLogic {
     
-    func doSomeLogic(request: ARScene.Something.Request) {
-        worker = ARSceneWorker()
-        worker?.doSomeWork()
-        
-        let response = ARScene.Something.Response()
-        presenter?.presentSomething(response: response)
+    func startAR(request: ARScene.StartAR.Request) {
+        let response = ARScene.StartAR.Response()
+        presenter?.presentStartAR(response: response)
+    }
+    
+    func backFromMap(request: ARScene.BackFromMap.Request) {
+        let response = ARScene.BackFromMap.Response()
+        presenter?.presentBackFromMap(response: response)
+    }
+    
+    func saveLocation(request: ARScene.SaveLocation.Request) {
+        self.currentLocation = request.location
+        let response = ARScene.SaveLocation.Response(location: request.location)
+        presenter?.presentSaveLocation(response: response)
     }
 
 }
