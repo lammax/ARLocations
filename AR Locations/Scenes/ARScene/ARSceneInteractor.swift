@@ -12,6 +12,7 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 protocol ARSceneBusinessLogic {
     func startAR(request: ARScene.StartAR.Request)
@@ -22,6 +23,7 @@ protocol ARSceneBusinessLogic {
 protocol ARSceneDataStore {
     var currentLocation: CLLocation? { get set }
     var backFromMap: Bool { get set }
+    var currentRegion: MKCoordinateRegion? { get set }
 }
 
 class ARSceneInteractor: ARSceneDataStore {
@@ -38,6 +40,7 @@ class ARSceneInteractor: ARSceneDataStore {
             }
         }
     }
+    var currentRegion: MKCoordinateRegion?
 
     // MARK: Do stuff
     

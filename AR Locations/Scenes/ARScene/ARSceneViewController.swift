@@ -85,7 +85,10 @@ class ARSceneViewController: UIViewController {
     // MARK: Do something
 
     //@IBOutlet weak var nameTextField: UITextField!
-
+    @IBAction func addLocationButtonClicked(_ sender: UIButton) {
+        print("add location AR")
+    }
+    
     func doOnDidLoad() {
         self.motionManager.delegate = self
         self.locationManager.delegate = self

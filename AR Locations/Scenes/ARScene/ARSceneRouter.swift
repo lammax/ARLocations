@@ -40,6 +40,7 @@ class ARSceneRouter: NSObject, ARSceneRoutingLogic, ARSceneDataPassing {
 
 //     MARK: Passing data
     func passDataToSomewhere(source: ARSceneDataStore, destination: inout MapSceneDataStore) {
-      destination.currentLocation = source.currentLocation
+        destination.currentRegion = source.currentRegion
+        destination.currentLocation = source.currentLocation
     }
 }

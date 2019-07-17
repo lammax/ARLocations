@@ -12,6 +12,7 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 enum MapScene {
     
@@ -26,6 +27,29 @@ enum MapScene {
         }
         struct ViewModel {
             let location: CLLocation
+        }
+    }
+    
+    enum Region {
+        struct Request {
+            let region: MKCoordinateRegion
+        }
+        struct Response {
+            let region: MKCoordinateRegion
+        }
+        struct ViewModel {
+            let region: MKCoordinateRegion
+        }
+    }
+    
+    enum PlaceLocation {
+        struct Request {
+        }
+        struct Response {
+            let location: CLLocation?
+        }
+        struct ViewModel {
+            let annotation: MKPointAnnotation?
         }
     }
     

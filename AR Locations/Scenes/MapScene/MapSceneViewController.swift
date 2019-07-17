@@ -15,6 +15,8 @@ import MapKit
 
 protocol MapSceneDisplayLogic: class {
     func displayLocation(viewModel: MapScene.Location.ViewModel)
+    func displayRegion(viewModel: MapScene.Region.ViewModel)
+    func displayPlaceLocation(viewModel: MapScene.PlaceLocation.ViewModel)
 }
 
 class MapSceneViewController: UIViewController {
@@ -78,24 +80,34 @@ class MapSceneViewController: UIViewController {
     // MARK: Do something
 
     //@IBOutlet weak var nameTextField: UITextField!
-
+    @IBAction func addLocationButtonClicked(_ sender: UIButton) {
+        let request = MapScene.PlaceLocation.Request()
+        self.interactor?.placeLocation(request: request)
+    }
+    
     func doOnDidLoad() {
 
         if let location = self.router?.dataStore?.currentLocation {
             
-            mapView.setUserTrackingMode(.followWithHeading, animated: true)
+            mapView.setUserTrackingMode(.followWithHeading, animated: false)
+            mapView.showsScale = true
+            mapView.showsCompass = true
             
-            let horizontalAccuracy: Double = location.horizontalAccuracy
             let circleOverlay = MKCircle(center: location.coordinate,
-                                         radius: horizontalAccuracy)
+                                         radius: location.horizontalAccuracy)
             self.mapView.addOverlay(circleOverlay)
             
         }
     }
     
-    private func showLocation(location: CLLocation) {
+    private func saveLocation(location: CLLocation) {
         let request = MapScene.Location.Request(location: location)
-        interactor?.showLocation(request: request)
+        interactor?.saveLocation(request: request)
+    }
+    
+    private func saveRegion(region: MKCoordinateRegion) {
+        let request = MapScene.Region.Request(region: region)
+        interactor?.saveRegion(request: request)
     }
 
   
@@ -105,14 +117,21 @@ extension MapSceneViewController: MapSceneDisplayLogic {
     
     func displayLocation(viewModel: MapScene.Location.ViewModel) {
         if let mapView = self.mapView {
-            mapView.setCenter(viewModel.location.coordinate, animated: true)
-            // Change the scale.
-            // Specify magnification.
-            let span : MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-            // Specify the center position specified in MapView and the span declared with MKCoordinateSapn.
-            let region : MKCoordinateRegion = MKCoordinateRegion(center: mapView.centerCoordinate, span: span)
-
-            mapView.setRegion(region, animated: false)
+            mapView.setCenter(viewModel.location.coordinate, animated: false)
+            mapView.setUserTrackingMode(.followWithHeading, animated: false)
+        }
+    }
+    
+    func displayRegion(viewModel: MapScene.Region.ViewModel) {
+        if let mapView = self.mapView {
+            mapView.setRegion(mapView.regionThatFits(viewModel.region), animated: false)
+            mapView.setUserTrackingMode(.followWithHeading, animated: false)
+        }
+    }
+    
+    func displayPlaceLocation(viewModel: MapScene.PlaceLocation.ViewModel) {
+        if let annotation = viewModel.annotation {
+            mapView.addAnnotation(annotation)
         }
     }
 
@@ -121,6 +140,7 @@ extension MapSceneViewController: MapSceneDisplayLogic {
 extension MapSceneViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
         
         if let overlay = overlay as? MKCircle{
             let circleRenderer = MKCircleRenderer(circle: overlay)
@@ -131,6 +151,32 @@ extension MapSceneViewController: MKMapViewDelegate {
         
         return MKOverlayRenderer(overlay: overlay)
     }
+    
+    func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
+        //print("mapViewDidFinishRenderingMap = \(mapView.region.span)")
+        self.saveRegion(region: mapView.region)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else { return nil }
+        
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView!.annotation = annotation
+        }
+        
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print("didSelect MKAnnotationView")
+    }
+    
 }
 
 extension MapSceneViewController: MotionManagerDelegate {
@@ -148,7 +194,7 @@ extension MapSceneViewController: MotionManagerDelegate {
 
 extension MapSceneViewController: LocationManagerDelegate {
     func locationManager(didLocationUpdate location: CLLocation) {
-        self.showLocation(location: location)
+        self.saveLocation(location: location)
     }
     
     func locationManager(didHeadingUpdate heading: CLHeading) {

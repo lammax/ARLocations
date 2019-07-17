@@ -45,6 +45,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUV-kf-CaS">
+                                <rect key="frame" x="168.5" y="657" width="77" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title=" Add place ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addLocationButtonClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Bms-j1-vX7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -52,6 +62,8 @@
                             <constraint firstItem="khL-OB-KMz" firstAttribute="centerY" secondItem="U0K-SW-4ec" secondAttribute="centerY" multiplier="0.5" id="9Ex-kE-hc2"/>
                             <constraint firstItem="USm-he-Ev8" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="DYb-rj-Iec"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
+                            <constraint firstItem="OUV-kf-CaS" firstAttribute="centerY" secondItem="U0K-SW-4ec" secondAttribute="centerY" multiplier="1.5" id="LbA-Nm-ZmM"/>
+                            <constraint firstItem="OUV-kf-CaS" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="S7j-mb-l78"/>
                             <constraint firstItem="Kb2-fW-UT3" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="SgA-I1-6tS"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
@@ -86,12 +98,24 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MJb-4i-6c2">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfK-DU-tWb">
+                                <rect key="frame" x="160" y="657" width="94" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title=" Add location ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addLocationButtonClicked:" destination="rLh-Xt-vCo" eventType="touchUpInside" id="Wrp-h6-AGp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MJb-4i-6c2" firstAttribute="top" secondItem="wN6-Sk-efL" secondAttribute="top" id="ILQ-VV-Nmd"/>
                             <constraint firstItem="jbM-74-Ofc" firstAttribute="bottom" secondItem="MJb-4i-6c2" secondAttribute="bottom" id="NOR-7P-Tpq"/>
                             <constraint firstItem="MJb-4i-6c2" firstAttribute="leading" secondItem="jbM-74-Ofc" secondAttribute="leading" id="Nqz-ko-WnK"/>
+                            <constraint firstItem="KfK-DU-tWb" firstAttribute="centerY" secondItem="wN6-Sk-efL" secondAttribute="centerY" multiplier="1.5" id="Rxy-QX-0QD"/>
+                            <constraint firstItem="KfK-DU-tWb" firstAttribute="centerX" secondItem="wN6-Sk-efL" secondAttribute="centerX" id="coQ-Eb-pVp"/>
                             <constraint firstItem="jbM-74-Ofc" firstAttribute="trailing" secondItem="MJb-4i-6c2" secondAttribute="trailing" id="oNy-zr-8yY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jbM-74-Ofc"/>

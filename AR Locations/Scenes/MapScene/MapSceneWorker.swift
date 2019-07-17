@@ -11,11 +11,21 @@
 //
 
 import UIKit
+import MapKit
 
 class MapSceneWorker {
   
-    func doSomeWork() {
-    
+    func makeRegion(maybeCenterCoordinate: CLLocationCoordinate2D?, maybeSpan: MKCoordinateSpan?) -> MKCoordinateRegion? {
+        if let centerCoordinate = maybeCenterCoordinate {
+            let defaultSpan : MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            // Specify the center position specified in MapView and the span declared with MKCoordinateSapn.
+            return MKCoordinateRegion(
+                center: centerCoordinate,
+                span: maybeSpan ?? defaultSpan
+            )
+        } else {
+            return nil
+        }
     }
     
 }

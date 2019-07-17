@@ -11,9 +11,12 @@
 //
 
 import UIKit
+import MapKit
 
 protocol MapScenePresentationLogic {
     func presentLocation(response: MapScene.Location.Response)
+    func presentRegion(response: MapScene.Region.Response)
+    func presentPlaceLocation(response: MapScene.PlaceLocation.Response)
 }
 
 class MapScenePresenter: MapScenePresentationLogic {
@@ -22,8 +25,28 @@ class MapScenePresenter: MapScenePresentationLogic {
     // MARK: Do something
 
     func presentLocation(response: MapScene.Location.Response) {
-        let viewModel = MapScene.Location.ViewModel(location: response.location)
+        let viewModel = MapScene.Location.ViewModel(
+            location: response.location
+        )
         viewController?.displayLocation(viewModel: viewModel)
+    }
+    
+    func presentRegion(response: MapScene.Region.Response) {
+        let viewModel = MapScene.Region.ViewModel(region: response.region)
+        viewController?.displayRegion(viewModel: viewModel)
+    }
+    
+    func presentPlaceLocation(response: MapScene.PlaceLocation.Response) {
+        var annotation: MKPointAnnotation?
+        
+        if let location = response.location {
+            annotation = MKPointAnnotation()
+            annotation?.title = "Location"
+            annotation?.coordinate = location.coordinate
+        }
+
+        let viewModel = MapScene.PlaceLocation.ViewModel(annotation: annotation)
+        viewController?.displayPlaceLocation(viewModel: viewModel)
     }
     
 }

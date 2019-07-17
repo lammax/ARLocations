@@ -45,5 +45,6 @@ class MapSceneRouter: NSObject, MapSceneRoutingLogic, MapSceneDataPassing {
     func passDataToSomewhere(source: MapSceneDataStore, destination: inout ARSceneDataStore) {
         destination.currentLocation = source.currentLocation
         destination.backFromMap = true
+        destination.currentRegion = source.currentRegion
     }
 }

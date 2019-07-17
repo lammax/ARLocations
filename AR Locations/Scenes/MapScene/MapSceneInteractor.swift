@@ -12,13 +12,19 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 protocol MapSceneBusinessLogic {
+    func saveLocation(request: MapScene.Location.Request)
+    func saveRegion(request: MapScene.Region.Request)
     func showLocation(request: MapScene.Location.Request)
+    func showRegion(request: MapScene.Region.Request)
+    func placeLocation(request: MapScene.PlaceLocation.Request)
 }
 
 protocol MapSceneDataStore {
     var currentLocation: CLLocation? { get set }
+    var currentRegion: MKCoordinateRegion? { get set }
 }
 
 class MapSceneInteractor: MapSceneDataStore {
@@ -29,25 +35,54 @@ class MapSceneInteractor: MapSceneDataStore {
     //MARK: DataStore
     var currentLocation: CLLocation? = nil {
         didSet {
-            self.doLocation(maybeLocation: currentLocation)
+            self.doLocation()
         }
     }
+    var currentRegion: MKCoordinateRegion?
 
     // MARK: Do stuff
     
-    private func doLocation(maybeLocation: CLLocation?) {
-        if let location = maybeLocation {
+    private func doLocation() {
+        
+        if let location = self.currentLocation {
             self.showLocation(request: MapScene.Location.Request(location: location))
         }
+        
+        if let region = self.currentRegion {
+            self.showRegion(request: MapScene.Region.Request(region: region))
+        } else if let defautRegion = self.worker?.makeRegion(maybeCenterCoordinate: self.currentLocation?.coordinate, maybeSpan: nil) {
+            self.showRegion(request: MapScene.Region.Request(
+                region: defautRegion
+            ))
+        }
+        
     }
-
+    
 }
 
 extension MapSceneInteractor: MapSceneBusinessLogic {
     
+    func saveLocation(request: MapScene.Location.Request) {
+        self.currentLocation = request.location
+    }
+    
+    func saveRegion(request: MapScene.Region.Request) {
+        self.currentRegion = request.region
+    }
+
     func showLocation(request: MapScene.Location.Request) {
         let response = MapScene.Location.Response(location: request.location)
         presenter?.presentLocation(response: response)
     }
-
+    
+    func showRegion(request: MapScene.Region.Request) {
+        let response = MapScene.Region.Response(region: request.region)
+        presenter?.presentRegion(response: response)
+    }
+    
+    func placeLocation(request: MapScene.PlaceLocation.Request) {
+        let response = MapScene.PlaceLocation.Response(location: self.currentLocation)
+        presenter?.presentPlaceLocation(response: response)
+    }
+    
 }
