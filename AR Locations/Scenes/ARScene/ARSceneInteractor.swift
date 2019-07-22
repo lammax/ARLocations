@@ -28,6 +28,8 @@ protocol ARSceneDataStore {
 
 class ARSceneInteractor: ARSceneDataStore {
     
+    weak var dbManager: DBManager? = DBManager.sharedInstance
+    
     var presenter: ARScenePresentationLogic?
     var worker: ARSceneWorker?
     
@@ -41,7 +43,6 @@ class ARSceneInteractor: ARSceneDataStore {
         }
     }
     var currentRegion: MKCoordinateRegion?
-
     // MARK: Do stuff
     
     private func doBackFromMap() {
@@ -55,6 +56,7 @@ class ARSceneInteractor: ARSceneDataStore {
 extension ARSceneInteractor: ARSceneBusinessLogic {
     
     func startAR(request: ARScene.StartAR.Request) {
+        //self.dbManager?.clearDB()
         let response = ARScene.StartAR.Response()
         presenter?.presentStartAR(response: response)
     }

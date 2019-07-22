@@ -46,10 +46,30 @@ enum MapScene {
         struct Request {
         }
         struct Response {
-            let location: CLLocation?
+            let location: LocationCoordinate2D?
         }
         struct ViewModel {
-            let annotation: MKPointAnnotation?
+            let annotation: CustomLocationAnnotation?
+        }
+    }
+    
+    enum LoadLocations {
+        struct Request {
+        }
+        struct Response {
+            let locations: [LocationCoordinate2D]?
+        }
+        struct ViewModel {
+            let annotations: [CustomLocationAnnotation]?
+        }
+    }
+    
+    enum DeInit {
+        struct Request {
+        }
+        struct Response {
+        }
+        struct ViewModel {
         }
     }
     

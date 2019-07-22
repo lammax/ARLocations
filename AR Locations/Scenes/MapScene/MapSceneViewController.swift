@@ -10,6 +10,9 @@
 //  see http://clean-swift.com
 //
 
+//TODO
+// - how to add locations to local DB?
+
 import UIKit
 import MapKit
 
@@ -17,15 +20,17 @@ protocol MapSceneDisplayLogic: class {
     func displayLocation(viewModel: MapScene.Location.ViewModel)
     func displayRegion(viewModel: MapScene.Region.ViewModel)
     func displayPlaceLocation(viewModel: MapScene.PlaceLocation.ViewModel)
+    func displayLoadLocations(viewModel: MapScene.LoadLocations.ViewModel)
+    func displayDeInit(viewModel: MapScene.DeInit.ViewModel)
 }
 
 class MapSceneViewController: UIViewController {
     var interactor: MapSceneBusinessLogic?
     var router: (NSObjectProtocol & MapSceneRoutingLogic & MapSceneDataPassing)?
     
-    let motionManager: MotionManager = MotionManager.sharedInstance
-    let locationManager: LocationManager = LocationManager.sharedInstance
-    let exifManager: ExifManager = ExifManager.sharedInstance
+    weak var motionManager: MotionManager? = MotionManager.sharedInstance
+    weak var locationManager: LocationManager? = LocationManager.sharedInstance
+    weak var exifManager: ExifManager? = ExifManager.sharedInstance
     
     var isARSceneLoaded: Bool = false
 
@@ -40,6 +45,10 @@ class MapSceneViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+    }
+    
+    deinit {
+        self.doDeInit()
     }
 
     // MARK: Setup
@@ -63,10 +72,8 @@ class MapSceneViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.mapView.delegate = self
-        self.motionManager.delegate = self
-        self.locationManager.delegate = self
-        self.motionManager.startUpdate()
-        self.locationManager.startUpdating()
+        self.motionManager?.delegate = self
+        self.locationManager?.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -87,17 +94,25 @@ class MapSceneViewController: UIViewController {
     
     func doOnDidLoad() {
 
+        self.initMap()
+        self.loadLocations()
+        
+    }
+    
+    private func initMap() {
         if let location = self.router?.dataStore?.currentLocation {
-            
             mapView.setUserTrackingMode(.followWithHeading, animated: false)
             mapView.showsScale = true
             mapView.showsCompass = true
-            
             let circleOverlay = MKCircle(center: location.coordinate,
                                          radius: location.horizontalAccuracy)
             self.mapView.addOverlay(circleOverlay)
-            
         }
+    }
+    
+    private func loadLocations() {
+        let request = MapScene.LoadLocations.Request()
+        self.interactor?.loadLocations(request: request)
     }
     
     private func saveLocation(location: CLLocation) {
@@ -110,15 +125,24 @@ class MapSceneViewController: UIViewController {
         interactor?.saveRegion(request: request)
     }
 
-  
+    private func doDeInit() {
+        let request = MapScene.DeInit.Request()
+        interactor?.doDeInit(request: request)
+    }
+    
  }
 
 extension MapSceneViewController: MapSceneDisplayLogic {
     
     func displayLocation(viewModel: MapScene.Location.ViewModel) {
         if let mapView = self.mapView {
-            mapView.setCenter(viewModel.location.coordinate, animated: false)
-            mapView.setUserTrackingMode(.followWithHeading, animated: false)
+            if mapView.centerCoordinate != viewModel.location.coordinate {
+                print(mapView.userLocation.location?.distance(from: viewModel.location) ?? 0.0)
+                mapView.setCenter(viewModel.location.coordinate, animated: false)
+            }
+            if mapView.userTrackingMode != .followWithHeading {
+                mapView.setUserTrackingMode(.followWithHeading, animated: false)
+            }
         }
     }
     
@@ -133,6 +157,22 @@ extension MapSceneViewController: MapSceneDisplayLogic {
         if let annotation = viewModel.annotation {
             mapView.addAnnotation(annotation)
         }
+    }
+    
+    func displayLoadLocations(viewModel: MapScene.LoadLocations.ViewModel) {
+        if let annotations = viewModel.annotations {
+            for annotation in annotations {
+                mapView.addAnnotation(annotation)
+            }
+        }
+    }
+    
+    func displayDeInit(viewModel: MapScene.DeInit.ViewModel) {
+        self.motionManager = nil
+        self.locationManager = nil
+        self.exifManager = nil
+        self.interactor = nil
+        self.router = nil
     }
 
 }
@@ -158,23 +198,25 @@ extension MapSceneViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard annotation is MKPointAnnotation else { return nil }
+        //guard annotation is MKAnnotation else { return nil }
         
         let identifier = "Annotation"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
         if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView!.canShowCallout = true
         } else {
             annotationView!.annotation = annotation
         }
         
+        annotationView?.image = UIImage(named: "bubble")?.withSize(CGSize(width: 64.0, height: 64.0))
+        
         return annotationView
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("didSelect MKAnnotationView")
+        print("reuseIdentifier = \(view.reuseIdentifier ?? "no reuseIdentifier")")
     }
     
 }

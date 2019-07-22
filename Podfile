@@ -7,7 +7,7 @@ def tourist_pods
    pod 'Alamofire'
    pod 'AlamofireImage'
    pod 'SwiftyJSON'
-   
+   pod 'ARCoreLocation'
 end
 
 

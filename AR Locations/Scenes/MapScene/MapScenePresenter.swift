@@ -12,18 +12,44 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 protocol MapScenePresentationLogic {
     func presentLocation(response: MapScene.Location.Response)
     func presentRegion(response: MapScene.Region.Response)
     func presentPlaceLocation(response: MapScene.PlaceLocation.Response)
+    func presentLoadLocations(response: MapScene.LoadLocations.Response)
+    func presentDeInit(response: MapScene.DeInit.Response)
 }
 
-class MapScenePresenter: MapScenePresentationLogic {
+class MapScenePresenter {
     weak var viewController: MapSceneDisplayLogic?
 
     // MARK: Do something
 
+    private func location2Annotation(with maybeLocation: LocationCoordinate2D?) -> CustomLocationAnnotation? {
+        guard let location = maybeLocation else {
+            return nil
+        }
+        
+        let annotation = CustomLocationAnnotation(imageName: "bubble", dbLocation: location)
+        annotation.title = "Location"
+        annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+        return annotation
+    }
+    
+    private func locations2Annotations(with maybeLocations: [LocationCoordinate2D]?) -> [CustomLocationAnnotation]? {
+        guard let locations = maybeLocations else {
+            return nil
+        }
+
+        return locations.map({ location2Annotation(with: $0) }).filter({ $0 != nil }) as? [CustomLocationAnnotation]
+    }
+    
+}
+
+extension MapScenePresenter: MapScenePresentationLogic {
+    
     func presentLocation(response: MapScene.Location.Response) {
         let viewModel = MapScene.Location.ViewModel(
             location: response.location
@@ -37,16 +63,19 @@ class MapScenePresenter: MapScenePresentationLogic {
     }
     
     func presentPlaceLocation(response: MapScene.PlaceLocation.Response) {
-        var annotation: MKPointAnnotation?
-        
-        if let location = response.location {
-            annotation = MKPointAnnotation()
-            annotation?.title = "Location"
-            annotation?.coordinate = location.coordinate
-        }
-
-        let viewModel = MapScene.PlaceLocation.ViewModel(annotation: annotation)
+        let viewModel = MapScene.PlaceLocation.ViewModel(annotation: location2Annotation(with: response.location) )
         viewController?.displayPlaceLocation(viewModel: viewModel)
     }
     
+    func presentLoadLocations(response: MapScene.LoadLocations.Response) {
+        let viewModel = MapScene.LoadLocations.ViewModel(annotations: locations2Annotations(with: response.locations))
+        viewController?.displayLoadLocations(viewModel: viewModel)
+    }
+    
+    func presentDeInit(response: MapScene.DeInit.Response) {
+        let viewModel = MapScene.DeInit.ViewModel()
+        viewController?.displayDeInit(viewModel: viewModel)
+        self.viewController = nil
+    }
+
 }

@@ -95,6 +95,10 @@
 		041AFEE322D0DCF400BDDBB6 /* MapSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEDC22D0DCF400BDDBB6 /* MapSceneViewController.swift */; };
 		041AFEE422D0DCF400BDDBB6 /* MapSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEDD22D0DCF400BDDBB6 /* MapSceneInteractor.swift */; };
 		041AFEE522D0DCF400BDDBB6 /* MapSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AFEDE22D0DCF400BDDBB6 /* MapSceneConfigurator.swift */; };
+		0425945422E1E97F00895846 /* LocationCoordinate2D.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0425945222E1E97F00895846 /* LocationCoordinate2D.xcdatamodeld */; };
+		0425945722E1EB2600895846 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425945622E1EB2600895846 /* DBManager.swift */; };
+		0425945922E1F0BD00895846 /* CLLocationCoordinate2D+adds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0425945822E1F0BD00895846 /* CLLocationCoordinate2D+adds.swift */; };
+		04B00E0C22E626F500A4051A /* CustomLocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B00E0B22E626F500A4051A /* CustomLocationAnnotation.swift */; };
 		3986E7E1AFD6AD8342DFF3E3 /* Pods_AR_LocationsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CBBF78AC27CDC18CD7826A9 /* Pods_AR_LocationsTests.framework */; };
 		ADE794924EE5648BD13A980D /* Pods_AR_Locations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146332E555F040693775BFFD /* Pods_AR_Locations.framework */; };
 /* End PBXBuildFile section */
@@ -169,6 +173,10 @@
 		041AFEDC22D0DCF400BDDBB6 /* MapSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneViewController.swift; sourceTree = "<group>"; };
 		041AFEDD22D0DCF400BDDBB6 /* MapSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneInteractor.swift; sourceTree = "<group>"; };
 		041AFEDE22D0DCF400BDDBB6 /* MapSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneConfigurator.swift; sourceTree = "<group>"; };
+		0425945322E1E97F00895846 /* Location.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; path = Location.xcdatamodel; sourceTree = "<group>"; };
+		0425945622E1EB2600895846 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		0425945822E1F0BD00895846 /* CLLocationCoordinate2D+adds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+adds.swift"; sourceTree = "<group>"; };
+		04B00E0B22E626F500A4051A /* CustomLocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomLocationAnnotation.swift; path = "../../../../../../../System/Volumes/Data/Users/mac/Documents/Projects/AR Locations/Common/Custom classes/CustomLocationAnnotation.swift"; sourceTree = "<group>"; };
 		146332E555F040693775BFFD /* Pods_AR_Locations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Locations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBBF78AC27CDC18CD7826A9 /* Pods_AR_LocationsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_LocationsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC3B2BC97E22EF388435828 /* Pods-AR Locations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR Locations.debug.xcconfig"; path = "Target Support Files/Pods-AR Locations/Pods-AR Locations.debug.xcconfig"; sourceTree = "<group>"; };
@@ -255,6 +263,7 @@
 				041AFE4722CF74D500BDDBB6 /* ExifManager.swift */,
 				041AFE4C22CF74D500BDDBB6 /* LocationManager.swift */,
 				041AFE4822CF74D500BDDBB6 /* MotionManager.swift */,
+				0425945622E1EB2600895846 /* DBManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -318,6 +327,7 @@
 				041AFE7522CF766800BDDBB6 /* UIViewController+additions.swift */,
 				041AFE7222CF766800BDDBB6 /* URL+ads.swift */,
 				041AFE6722CF766800BDDBB6 /* UserDefaults+adds.swift */,
+				0425945822E1F0BD00895846 /* CLLocationCoordinate2D+adds.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -344,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				041AFEAB22CF794100BDDBB6 /* AlertMessage.swift */,
+				0425945222E1E97F00895846 /* LocationCoordinate2D.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				041AFED422D0B79500BDDBB6 /* SwipeNavigationController.swift */,
+				04B00E0B22E626F500A4051A /* CustomLocationAnnotation.swift */,
 			);
 			path = "Custom classes";
 			sourceTree = "<group>";
@@ -594,6 +606,7 @@
 				041AFEC122CF8F2700BDDBB6 /* StartSceneInteractor.swift in Sources */,
 				041AFE5422CF74D500BDDBB6 /* LocationManager.swift in Sources */,
 				041AFED622D0B79500BDDBB6 /* SwipeNavigationController.swift in Sources */,
+				0425945722E1EB2600895846 /* DBManager.swift in Sources */,
 				041AFEBD22CF8F2700BDDBB6 /* StartSceneModels.swift in Sources */,
 				041AFE8C22CF766900BDDBB6 /* Optional+adds.swift in Sources */,
 				041AFE9222CF766900BDDBB6 /* String+additions.swift in Sources */,
@@ -610,11 +623,13 @@
 				041AFE7C22CF766900BDDBB6 /* UIButton+adds.swift in Sources */,
 				041AFEAC22CF794100BDDBB6 /* AlertMessage.swift in Sources */,
 				041AFEE322D0DCF400BDDBB6 /* MapSceneViewController.swift in Sources */,
+				0425945422E1E97F00895846 /* LocationCoordinate2D.xcdatamodeld in Sources */,
 				041AFE8222CF766900BDDBB6 /* UserDefaults+adds.swift in Sources */,
 				041AFED022CF92CF00BDDBB6 /* ARSceneViewController.swift in Sources */,
 				041AFE4F22CF74D500BDDBB6 /* ExifManager.swift in Sources */,
 				041AFE9022CF766900BDDBB6 /* simd+adds.swift in Sources */,
 				041AFECF22CF92CF00BDDBB6 /* ARSceneModels.swift in Sources */,
+				0425945922E1F0BD00895846 /* CLLocationCoordinate2D+adds.swift in Sources */,
 				041AFEA422CF766900BDDBB6 /* UIAlertController+adds.swift in Sources */,
 				041AFEA622CF766900BDDBB6 /* PHAsset+adds.swift in Sources */,
 				041AFEE522D0DCF400BDDBB6 /* MapSceneConfigurator.swift in Sources */,
@@ -631,6 +646,7 @@
 				041AFEC322CF8F2700BDDBB6 /* StartSceneConfigurator.swift in Sources */,
 				041AFE8A22CF766900BDDBB6 /* Data+adds.swift in Sources */,
 				041AFECE22CF92CF00BDDBB6 /* ARSceneRouter.swift in Sources */,
+				04B00E0C22E626F500A4051A /* CustomLocationAnnotation.swift in Sources */,
 				041AFEB922CF8F2700BDDBB6 /* StartSceneWorker.swift in Sources */,
 				041AFE9A22CF766900BDDBB6 /* SCNNode+additions.swift in Sources */,
 				041AFED222CF92CF00BDDBB6 /* ARSceneConfigurator.swift in Sources */,
@@ -944,6 +960,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0425945222E1E97F00895846 /* LocationCoordinate2D.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0425945322E1E97F00895846 /* Location.xcdatamodel */,
+			);
+			currentVersion = 0425945322E1E97F00895846 /* Location.xcdatamodel */;
+			path = LocationCoordinate2D.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 041AFE1822CF70EE00BDDBB6 /* Project object */;
 }

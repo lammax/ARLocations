@@ -20,6 +20,8 @@ protocol MapSceneBusinessLogic {
     func showLocation(request: MapScene.Location.Request)
     func showRegion(request: MapScene.Region.Request)
     func placeLocation(request: MapScene.PlaceLocation.Request)
+    func loadLocations(request: MapScene.LoadLocations.Request)
+    func doDeInit(request: MapScene.DeInit.Request)
 }
 
 protocol MapSceneDataStore {
@@ -28,6 +30,8 @@ protocol MapSceneDataStore {
 }
 
 class MapSceneInteractor: MapSceneDataStore {
+    
+    weak var dbManager: DBManager? = DBManager.sharedInstance
     
     var presenter: MapScenePresentationLogic?
     var worker: MapSceneWorker?
@@ -39,6 +43,9 @@ class MapSceneInteractor: MapSceneDataStore {
         }
     }
     var currentRegion: MKCoordinateRegion?
+    
+    //MARK: Locar vars
+    var locations: [LocationCoordinate2D]?
 
     // MARK: Do stuff
     
@@ -81,8 +88,31 @@ extension MapSceneInteractor: MapSceneBusinessLogic {
     }
     
     func placeLocation(request: MapScene.PlaceLocation.Request) {
-        let response = MapScene.PlaceLocation.Response(location: self.currentLocation)
-        presenter?.presentPlaceLocation(response: response)
+        if let location = self.currentLocation, let newLocation = dbManager?.newLocation(with: location) {
+            self.locations?.append(newLocation)
+            let response = MapScene.PlaceLocation.Response(location: newLocation)
+            presenter?.presentPlaceLocation(response: response)
+        }
+    }
+    
+    func loadLocations(request: MapScene.LoadLocations.Request) {
+        dbManager?.loadItems() { [weak self] maybeLocations in
+            self?.locations = maybeLocations
+            print("MapSceneInteractor locations.count = \(self?.locations?.count ?? -1)")
+            let response = MapScene.LoadLocations.Response(locations: maybeLocations)
+            self?.presenter?.presentLoadLocations(response: response)
+        }
+    }
+    
+    func doDeInit(request: MapScene.DeInit.Request) {
+        self.dbManager = nil
+        self.worker = nil
+        self.currentLocation = nil
+        self.currentRegion = nil
+        self.locations = nil
+        let response = MapScene.DeInit.Response()
+        presenter?.presentDeInit(response: response)
+        self.presenter = nil
     }
     
 }

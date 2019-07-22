@@ -10,6 +10,10 @@
 //  see http://clean-swift.com
 //
 
+//TODO
+// - how to load and save map of annotations with given radius? DB =)
+
+
 import UIKit
 
 protocol StartSceneDisplayLogic: class {

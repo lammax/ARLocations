@@ -47,8 +47,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         super.init()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        locationManager.distanceFilter = 1 // 1 meter
-        locationManager.headingFilter = 1 // 1 degree
+        locationManager.distanceFilter = 10 // 1 meter
+        locationManager.headingFilter = 10 // 1 degree
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.startUpdating()
     }

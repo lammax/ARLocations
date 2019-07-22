@@ -10,10 +10,14 @@
 //  see http://clean-swift.com
 //
 
+//TODO
+// - how to add locations from AR?
+
 import UIKit
 import SceneKit
 import ARKit
 import CoreLocation
+import ARCoreLocation
 
 protocol ARSceneDisplayLogic: class {
     func displayBackFromMap(viewModel: ARScene.BackFromMap.ViewModel)
@@ -25,9 +29,10 @@ class ARSceneViewController: UIViewController {
     var interactor: ARSceneBusinessLogic?
     var router: (NSObjectProtocol & ARSceneRoutingLogic & ARSceneDataPassing)?
     
-    let motionManager: MotionManager = MotionManager.sharedInstance
-    let locationManager: LocationManager = LocationManager.sharedInstance
-    let exifManager: ExifManager = ExifManager.sharedInstance
+    weak var motionManager: MotionManager? = MotionManager.sharedInstance
+    weak var locationManager: LocationManager? = LocationManager.sharedInstance
+    weak var exifManager: ExifManager? = ExifManager.sharedInstance
+    var landmarker: ARLandmarker!
     
     var isMapSceneLoaded: Bool = false
 
@@ -62,12 +67,16 @@ class ARSceneViewController: UIViewController {
         
         // Run the view's session
         arSceneView.session.run(.makeBaseConfiguration(), options: [.removeExistingAnchors, .resetTracking])
-
+        
+        //ARCoreLocation
+        self.landmarker = ARLandmarker(view: ARSKView(), scene: InteractiveScene(), locationManager: CLLocationManager())
+        self.landmarker.view.frame = self.arSceneView.bounds
+        self.landmarker.scene.size = self.arSceneView.bounds.size
+        self.arSceneView.addSubview(self.landmarker.view)
+        
         self.isMapSceneLoaded = false
-        self.motionManager.delegate = self
-        self.locationManager.delegate = self
-        self.motionManager.startUpdate()
-        self.locationManager.startUpdating()
+        self.motionManager?.delegate = self
+        self.locationManager?.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -90,8 +99,6 @@ class ARSceneViewController: UIViewController {
     }
     
     func doOnDidLoad() {
-        self.motionManager.delegate = self
-        self.locationManager.delegate = self
         let request = ARScene.StartAR.Request()
         interactor?.startAR(request: request)
     }
@@ -131,8 +138,8 @@ extension ARSceneViewController: ARSceneDisplayLogic {
     
     func displaySaveLocation(viewModel: ARScene.SaveLocation.ViewModel) {
         DispatchQueue.main.async {
-            self.gpsCoordinateLabel.text = "GPS: \(self.exifManager.getLocatonPoint(location: viewModel.location))"
-            self.gpsAccuracyLabel.text = "Accuracy: " + String(format: "%.2f", arguments: [self.exifManager.getLocatonAccuracy(location: viewModel.location)])
+            self.gpsCoordinateLabel.text = "GPS: \(self.exifManager?.getLocatonPoint(location: viewModel.location) ?? .zero)"
+            self.gpsAccuracyLabel.text = "Accuracy: " + String(format: "%.2f", arguments: [self.exifManager?.getLocatonAccuracy(location: viewModel.location) ?? 0.0])
         }
     }
     
@@ -198,7 +205,7 @@ extension ARSceneViewController: MotionManagerDelegate {
                 self.router?.routeToMapScene()
                 self.isMapSceneLoaded = true
             }
-            self.gravityLabel.text = self.motionManager.dataToString(dataVector: gravityData, decimal: 3)
+            self.gravityLabel.text = self.motionManager?.dataToString(dataVector: gravityData, decimal: 3)
         }
     }
 }
@@ -210,7 +217,7 @@ extension ARSceneViewController: LocationManagerDelegate {
     
     func locationManager(didHeadingUpdate heading: CLHeading) {
         DispatchQueue.main.async {
-            self.northLabel.text = "TNorth: \(self.exifManager.getHeading(heading: heading, north: .True))"
+            self.northLabel.text = "TNorth: \(self.exifManager?.getHeading(heading: heading, north: .True) ?? 0.0)"
         }
     }
     
